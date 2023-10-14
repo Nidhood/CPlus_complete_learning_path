@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "intelli::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-intelli-Debug-527120ee59f45d10ec6f.json",
+					"jsonFile" : "target-intelli-Debug-feacd2b70da8d06ad01e.json",
 					"name" : "intelli",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/nidhood/Desktop/University/2023/Quinto semestre/Introducci\u00f3n a la programaci\u00f3n Embebida/C/Parciales/intelli/cmake-build-debug",
-		"source" : "/Users/nidhood/Desktop/University/2023/Quinto semestre/Introducci\u00f3n a la programaci\u00f3n Embebida/C/Parciales/intelli"
+		"build" : "/home/nidhood/Desktop/C/CPlus_complete_learning_path/cmake-build-debug",
+		"source" : "/home/nidhood/Desktop/C/CPlus_complete_learning_path"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 4
+		"minor" : 5
 	}
 }

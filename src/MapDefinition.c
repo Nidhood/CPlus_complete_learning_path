@@ -69,26 +69,33 @@ char hasAdventurer(const AdventurerIndexT adventurers[MAX_ADVENTURERS])
     return 0;
 }
 
+// Calculate the distance from the point (x, y) to the wall of the square matrix
 float calculateDistanceToWall(int x, int y, int max_size)
 {
-    int centerX = max_size / 2;
-    int centerY = max_size / 2;
-    return sqrt((x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));
+    // Calculate the distance to the wall in each direction
+    float distanceToTop = y;
+    float distanceToBottom = max_size - 1 - y;
+    float distanceToLeft = x;
+    float distanceToRight = max_size - 1 - x;
+
+    // Take the minimum distance to the wall in any direction
+    float distanceToWall = fmin(fmin(distanceToTop, distanceToBottom), fmin(distanceToLeft, distanceToRight));
+
+    return distanceToWall;
 }
 
-#include <math.h>
-
-float calculateDistanceToCenter(int x, int y, int maxSize)
+float calculateDistanceToCenter(int x, int y, int max_size)
 {
     // Calculate the coordinates of the center
-    float centerX = (float)(maxSize - 1) / 2.0f;
-    float centerY = (float)(maxSize - 1) / 2.0f;
+    float centerX = (float)max_size / 2.0f;
+    float centerY = (float)max_size / 2.0f;
 
     // Calculate the Euclidean distance
     float distance = sqrt(pow((float)x - centerX, 2) + pow((float)y - centerY, 2));
 
     return distance;
 }
+
 
 int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option, int map_probability_option) // 0 : extremes, 1 : center.
 {
@@ -216,8 +223,8 @@ int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option, 
 
                     // Calculate distance to the wall and add probability based on it
                     float distanceToWall = calculateDistanceToWall(i, j, MAX_SIZE);
-                    float additionalProbability = 1.0f / (40 + 40) - distanceToWall / (40 + 40);
-                    totalProbability += additionalProbability;
+                   //  float additionalProbability = 1.0f / (40 + 40) - distanceToWall / (40 + 40);
+                    totalProbability += distanceToWall;
 
                     // Assign probability to each path
                     if (i > 0 && map->matrix[i - 1][j].value == ' ')
@@ -290,8 +297,8 @@ int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option, 
 
                     // Calculate distance to the center and add probability based on it
                     float distanceToCenter = calculateDistanceToCenter(i, j, MAX_SIZE);
-                    float additionalProbability = 1.0f / (40 + 40) - distanceToCenter / (40 + 40);
-                    totalProbability += additionalProbability;
+                    // float additionalProbability = 1.0f / (40 + 40) - distanceToCenter / (40 + 40);
+                    totalProbability += distanceToCenter;
 
                     // Assign probability to each path
                     if (i > 0 && map->matrix[i - 1][j].value == ' ')
@@ -381,6 +388,26 @@ void drawMap(MapT map, AdventurerT adventurers[MAX_ADVENTURERS], uchar FontColor
     }
     fflush(stdout);
 }
+
+
+// Draw map:
+void drawProbabilitiesMap(MapT map, AdventurerT adventurers[MAX_ADVENTURERS], uchar FontColorWall, uchar BgColorWall, uchar FontColorGoal, uchar BgColorGoal)
+{
+    Cls();
+
+    // Index of the last adventurer found.
+    for (int y = MAX_SIZE - 1; y >= 0; --y)
+    {
+        printf("\t\t\t");
+        for (int x = 0; x < MAX_SIZE; ++x)
+        {
+            printf("%.4f  ", map.matrix[x][y].probability);
+        }
+        printf("\n");
+    }
+    fflush(stdout);
+}
+
 
 // Draw win map:
 void drawWinMap(MapT map, AdventurerT adventurers[MAX_ADVENTURERS], uchar FontColorWall, uchar BgColorWall, uchar FontColorGoal, uchar BgColorGoal)

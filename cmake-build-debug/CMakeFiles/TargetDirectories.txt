@@ -1,3 +1,3 @@
-/Users/nidhood/Desktop/University/2023/Quinto semestre/Introducción a la programación Embebida/C/Parciales/intelli/cmake-build-debug/CMakeFiles/intelli.dir
-/Users/nidhood/Desktop/University/2023/Quinto semestre/Introducción a la programación Embebida/C/Parciales/intelli/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/nidhood/Desktop/University/2023/Quinto semestre/Introducción a la programación Embebida/C/Parciales/intelli/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nidhood/Desktop/C/CPlus_complete_learning_path/cmake-build-debug/CMakeFiles/intelli.dir
+/home/nidhood/Desktop/C/CPlus_complete_learning_path/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nidhood/Desktop/C/CPlus_complete_learning_path/cmake-build-debug/CMakeFiles/rebuild_cache.dir

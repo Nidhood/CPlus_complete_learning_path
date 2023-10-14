@@ -29,3 +29,5 @@ char validateClash(const char validateValue);
 void cleanAdventurerRoute(MapT *map, AdventurerT adventurer);
 
 #endif // INTELLI_MAZERUNNERHEADER_H
+
+

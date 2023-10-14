@@ -1,3 +1,3 @@
 clear
-gcc -o test app/main.c src/*.c
+gcc -o test src/*.c app/main.c -lm
 ./test

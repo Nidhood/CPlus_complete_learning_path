@@ -406,6 +406,7 @@ char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map)
     srand(time(NULL));
     int randX = 0, randY = 0, moveValidationCounter = 0;
     float maxProbabilityAux = 0.0f, maxProbability = 0.0f, upProbability = 0.0f, downProbability = 0.0f, rightProbability = 0.0f, leftProbability = 0.0f;
+    char preferredDirection =  '\0';
 
     // FSM (basic but works):
     switch (adventurer->currentState)
@@ -460,7 +461,7 @@ char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map)
                 adventurer->currentState = STATE_REAPPEAR;
             }
         }
-        else if (moveValidationCounter >= 2)
+        else if (moveValidationCounter >= 3)
         {
             adventurer->currentState = STATE_CHECK_PROBABILITIES;
         }
@@ -485,7 +486,7 @@ char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map)
         if (adventurer->moveValidation.up && upProbability > maxProbability)
         {
             maxProbability = upProbability;
-            setAdventurerPosition("Arriba", adventurer);
+            preferredDirection = 'U';
         }
 
         // Compare the probability to go down if the path is unexplored
@@ -493,7 +494,7 @@ char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map)
         if (adventurer->moveValidation.down && downProbability > maxProbability)
         {
             maxProbability = downProbability;
-            setAdventurerPosition("Abajo", adventurer);
+            preferredDirection = 'D';
         }
 
         // Compare the probability to go right if the path is unexplored
@@ -501,7 +502,7 @@ char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map)
         if (adventurer->moveValidation.right && rightProbability > maxProbability)
         {
             maxProbability = rightProbability;
-            setAdventurerPosition("Derecha", adventurer);
+            preferredDirection = 'R';
         }
 
         // Compare the probability to go left if the path is unexplored
@@ -509,7 +510,24 @@ char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map)
         if (adventurer->moveValidation.left && leftProbability > maxProbability)
         {
             maxProbability = leftProbability;
+            preferredDirection = 'L';
+        }
+
+        // Decide which direction to move based on the preferredDirection:
+        switch (preferredDirection)
+        {
+        case 'U':
+            setAdventurerPosition("Arriba", adventurer);
+            break;
+        case 'D':
+            setAdventurerPosition("Abajo", adventurer);
+            break;
+        case 'R':
+            setAdventurerPosition("Derecha", adventurer);
+            break;
+        case 'L':
             setAdventurerPosition("Izquierda", adventurer);
+            break;
         }
 
         // Update matrix probabilities only for unexplored paths:
