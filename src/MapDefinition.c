@@ -18,6 +18,43 @@ int roads(MapT map)
     return counter;
 }
 
+void updateProbabilities(MapT *map, int x, int y)
+{
+    // Reducir la probabilidad del camino elegido a cero
+    map->matrix[x][y].probability = 0.0f;
+
+    // Actualizar las probabilidades de los caminos restantes
+    float totalProbability = 0.0f;
+
+    // Calcular la suma total de las probabilidades
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+        for (int j = 0; j < MAX_SIZE; j++)
+        {
+            if (map->matrix[i][j].value == ' ')
+            {
+                totalProbability += map->matrix[i][j].probability;
+            }
+        }
+    }
+
+    // Asegurarse de que totalProbability no sea cero antes de la normalización
+    if (totalProbability > 0.0f)
+    {
+        // Normalizar las probabilidades
+        for (int i = 0; i < MAX_SIZE; i++)
+        {
+            for (int j = 0; j < MAX_SIZE; j++)
+            {
+                if (map->matrix[i][j].value == ' ')
+                {
+                    map->matrix[i][j].probability /= totalProbability;
+                }
+            }
+        }
+    }
+}
+
 char hasAdventurer(const AdventurerIndexT adventurers[MAX_ADVENTURERS])
 {
     for (int i = 0; i < MAX_ADVENTURERS; ++i)
@@ -32,7 +69,28 @@ char hasAdventurer(const AdventurerIndexT adventurers[MAX_ADVENTURERS])
     return 0;
 }
 
-int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option)
+float calculateDistanceToWall(int x, int y, int max_size)
+{
+    int centerX = max_size / 2;
+    int centerY = max_size / 2;
+    return sqrt((x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));
+}
+
+#include <math.h>
+
+float calculateDistanceToCenter(int x, int y, int maxSize)
+{
+    // Calculate the coordinates of the center
+    float centerX = (float)(maxSize - 1) / 2.0f;
+    float centerY = (float)(maxSize - 1) / 2.0f;
+
+    // Calculate the Euclidean distance
+    float distance = sqrt(pow((float)x - centerX, 2) + pow((float)y - centerY, 2));
+
+    return distance;
+}
+
+int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option, int map_probability_option) // 0 : extremes, 1 : center.
 {
     int boxes, counter_adventurers = 0;
     FILE *file = fopen(map->path, "r");
@@ -61,6 +119,7 @@ int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option)
                     map->matrix[i][j].value = c;
                     strcpy(map->matrix[i][j].adventurers[counter_adventurers].adventurer, adventurers[counter_adventurers].name);
                     map->matrix[i][j].probability = 1.0f / MAX_SIZE;
+                    map->matrix[i][j].lastIndex = adventurers[counter_adventurers].adventurer_index;
                     adventurers[counter_adventurers].currentLocation.x = i;
                     adventurers[counter_adventurers].currentLocation.y = j;
                     adventurers[counter_adventurers].adventurer_index = counter_adventurers;
@@ -110,23 +169,156 @@ int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option)
     // Probability in each box:
     boxes = roads(*map);
 
-    for (int i = 0; i < MAX_SIZE; i++)
+    if (map_probability_option == 0)
     {
-        for (int j = 0; j < MAX_SIZE; j++)
+        for (int i = 0; i < MAX_SIZE; i++)
         {
-            if (map->matrix[i][j].value == ' ')
+            for (int j = 0; j < MAX_SIZE; j++)
             {
-                map->matrix[i][j].probability = 1.0f / (float)boxes;
+                if (map->matrix[i][j].value == ' ')
+                {
+                    int paths = 0;                 // Counter for possible paths
+                    float totalProbability = 0.0f; // Total probability to distribute among paths
+
+                    // Check if there is a path above
+                    if (i > 0 && map->matrix[i - 1][j].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Check if there is a path below
+                    if (i < MAX_SIZE - 1 && map->matrix[i + 1][j].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Check if there is a path to the left
+                    if (j > 0 && map->matrix[i][j - 1].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Check if there is a path to the right
+                    if (j < MAX_SIZE - 1 && map->matrix[i][j + 1].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Assign probability based on the number of possible paths
+                    if (paths == 3)
+                    {
+                        totalProbability = 1.0f / 3.0f;
+                    }
+                    else if (paths == 4)
+                    {
+                        totalProbability = 1.0f / 4.0f;
+                    }
+
+                    // Calculate distance to the wall and add probability based on it
+                    float distanceToWall = calculateDistanceToWall(i, j, MAX_SIZE);
+                    float additionalProbability = 1.0f / (40 + 40) - distanceToWall / (40 + 40);
+                    totalProbability += additionalProbability;
+
+                    // Assign probability to each path
+                    if (i > 0 && map->matrix[i - 1][j].value == ' ')
+                    {
+                        map->matrix[i - 1][j].probability = totalProbability;
+                    }
+
+                    if (i < MAX_SIZE - 1 && map->matrix[i + 1][j].value == ' ')
+                    {
+                        map->matrix[i + 1][j].probability = totalProbability;
+                    }
+
+                    if (j > 0 && map->matrix[i][j - 1].value == ' ')
+                    {
+                        map->matrix[i][j - 1].probability = totalProbability;
+                    }
+
+                    if (j < MAX_SIZE - 1 && map->matrix[i][j + 1].value == ' ')
+                    {
+                        map->matrix[i][j + 1].probability = totalProbability;
+                    }
+                }
             }
         }
     }
-    return map_option;
-}
+    else if (map_probability_option == 1)
+    {
+        for (int i = 0; i < MAX_SIZE; i++)
+        {
+            for (int j = 0; j < MAX_SIZE; j++)
+            {
+                if (map->matrix[i][j].value == ' ')
+                {
+                    int paths = 0;                 // Counter for possible paths
+                    float totalProbability = 0.0f; // Total probability to distribute among paths
 
-void clearScreen()
-{
-    printf("\033[H\033[J"); // ANSI code to clear screen
-    fflush(stdout);         // Asegurarse de que la salida se ha vaciado
+                    // Check if there is a path above
+                    if (i > 0 && map->matrix[i - 1][j].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Check if there is a path below
+                    if (i < MAX_SIZE - 1 && map->matrix[i + 1][j].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Check if there is a path to the left
+                    if (j > 0 && map->matrix[i][j - 1].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Check if there is a path to the right
+                    if (j < MAX_SIZE - 1 && map->matrix[i][j + 1].value == ' ')
+                    {
+                        paths++;
+                    }
+
+                    // Assign probability based on the number of possible paths
+                    if (paths == 3)
+                    {
+                        totalProbability = 1.0f / 3.0f;
+                    }
+                    else if (paths == 4)
+                    {
+                        totalProbability = 1.0f / 4.0f;
+                    }
+
+                    // Calculate distance to the center and add probability based on it
+                    float distanceToCenter = calculateDistanceToCenter(i, j, MAX_SIZE);
+                    float additionalProbability = 1.0f / (40 + 40) - distanceToCenter / (40 + 40);
+                    totalProbability += additionalProbability;
+
+                    // Assign probability to each path
+                    if (i > 0 && map->matrix[i - 1][j].value == ' ')
+                    {
+                        map->matrix[i - 1][j].probability = totalProbability;
+                    }
+
+                    if (i < MAX_SIZE - 1 && map->matrix[i + 1][j].value == ' ')
+                    {
+                        map->matrix[i + 1][j].probability = totalProbability;
+                    }
+
+                    if (j > 0 && map->matrix[i][j - 1].value == ' ')
+                    {
+                        map->matrix[i][j - 1].probability = totalProbability;
+                    }
+
+                    if (j < MAX_SIZE - 1 && map->matrix[i][j + 1].value == ' ')
+                    {
+                        map->matrix[i][j + 1].probability = totalProbability;
+                    }
+                }
+            }
+        }
+    }
+
+    return map_option;
 }
 
 // Draw map:
@@ -187,18 +379,7 @@ void drawMap(MapT map, AdventurerT adventurers[MAX_ADVENTURERS], uchar FontColor
         }
         printf("\n");
     }
-    for (int i = 0; i < MAX_ADVENTURERS; ++i)
-    {
-        BackgroundColor(adventurers[i].color.backColor, adventurers[i].color.fontColor);
-        printf("\nCantidad de pasos realizados por el aventurero '%s': ", adventurers[i].name);
-        BackgroundColor(adventurers[i].color.fontColor, adventurers[i].color.backColor);
-        printf(" %d\n", adventurers[i].steps_counter);
-        BackgroundColor(adventurers[i].color.backColor, adventurers[i].color.fontColor);
-        printf("\nCantidad de estados por los cuales paso el aventurero '%s': ", adventurers[i].name);
-        BackgroundColor(adventurers[i].color.fontColor, adventurers[i].color.backColor);
-        printf(" %d\n", adventurers[i].total_states);
-        printf("\n");
-    }
+    fflush(stdout);
 }
 
 // Draw win map:
@@ -254,17 +435,24 @@ void drawWinMap(MapT map, AdventurerT adventurers[MAX_ADVENTURERS], uchar FontCo
     }
     for (int i = 0; i < MAX_ADVENTURERS; ++i)
     {
-        BackgroundColor(GREEN_COLOR, BLACK_COLOR);
+        BackgroundColor(adventurers[i].color.backColor, adventurers[i].color.fontColor);
         printf("\nCantidad de pasos realizados por el aventurero '%s': ", adventurers[i].name);
         BackgroundColor(adventurers[i].color.fontColor, adventurers[i].color.backColor);
-        printf("%d\n", adventurers[i].steps_counter);
-        BackgroundColor(GREEN_COLOR, BLACK_COLOR);
+        printf(" %d\n", adventurers[i].steps_counter);
+        BackgroundColor(adventurers[i].color.backColor, adventurers[i].color.fontColor);
         printf("\nCantidad de estados por los cuales paso el aventurero '%s': ", adventurers[i].name);
         BackgroundColor(adventurers[i].color.fontColor, adventurers[i].color.backColor);
-        printf("%d\n", adventurers[i].total_states);
+        printf(" %d\n", adventurers[i].total_states);
         printf("\n");
+        fflush(stdout);
         RstColor();
     }
+    while (getchar() != '\n')
+        ; // Limpiar el búfer del teclado
+
+    BackgroundColor(GREEN_COLOR, BLACK_COLOR);
+    printf("En general el promedio de pasos y estados totales fueron respetivamente : %.4f - %.4f\n", (float)((adventurers[0].steps_counter + adventurers[1].steps_counter + adventurers[2].steps_counter + adventurers[3].steps_counter) / 4), (float)((adventurers[0].total_states + adventurers[1].total_states + adventurers[2].total_states + adventurers[3].total_states) / 4));
+    printf("\n");
     Pause();
 }
 

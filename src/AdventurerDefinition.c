@@ -1,7 +1,7 @@
 #include "../include/AdventurerHeader.h"
 #include <stdio.h> // input and output streams.
 
-AdventurerT setAdventurer(const char *name, uchar FontColorAdventurer, uchar BgColorAdventurer)
+AdventurerT setAdventurer(const char *name, uchar FontColorAdventurer, uchar BgColorAdventurer, int FSM)
 {
 
     // Set default settings for the new adventurer:
@@ -17,7 +17,8 @@ AdventurerT setAdventurer(const char *name, uchar FontColorAdventurer, uchar BgC
         .steps_counter = 0,
         .total_states = 0,
         .adventurer_index = 0,
-        .adventurer_colitions = 0};
+        .adventurer_colitions = 0,
+        .FSM = FSM};
 
     for (int i = 0; i < MAX_MEMORIZED_STEPS; i++)
     {

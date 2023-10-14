@@ -2,7 +2,6 @@
 #include <stdlib.h> // EXIT_SUCCESS return.
 #include "../include/MenusHeader.h"
 #include "../include/MapHeader.h"
-#include "../include/AdventurerHeader.h"
 #include "../include/MazeRunnerHeader.h"
 
 // Global Variables:
@@ -32,7 +31,7 @@ int main()
 {
     // Declare variables:
     int menu_option, map_option = 0, validation_counter = 0;
-    char out_validation, goal_validation = 1, final_validation = 1, goal_validation_vector[MAX_ADVENTURERS] = {0}; // False by default.
+    char out_validation, goal_validation = 1, option = '\0', goal_validation_vector[MAX_ADVENTURERS] = {0}; // False by default.
 
     OptionT main_menu_options[] = {
         {1, "Seleccionar mapa."},
@@ -65,13 +64,13 @@ int main()
         createMap("Mapa 5", "Mapa 5", FILE_PATH_PREFIX "Map5.txt")};
 
     AdventurerT adventurers[] = {
-        setAdventurer("Thomas", WHITE_COLOR, RED_COLOR),
-        setAdventurer("Newt", GREEN_COLOR, BLUE_COLOR),
-        setAdventurer("Minho", BLUE_COLOR, MAGENTA_COLOR),
-        setAdventurer("Chuck", MAGENTA_COLOR, YELLOW_COLOR)};
+        setAdventurer("Thomas", WHITE_COLOR, RED_COLOR, 1),
+        setAdventurer("Newt", GREEN_COLOR, BLUE_COLOR, 1),
+        setAdventurer("Minho", BLUE_COLOR, MAGENTA_COLOR, 1),
+        setAdventurer("Chuck", MAGENTA_COLOR, YELLOW_COLOR, 1)};
 
     // Welcome message.
-    display_message("¡¡¡ Bienvenidos aventureros al laberinto !!!", YELLOW_COLOR, BLACK_COLOR);
+    // display_message("¡¡¡ Bienvenidos aventureros al laberinto !!!", YELLOW_COLOR, BLACK_COLOR);
     do
     {
         out_validation = 0;
@@ -85,7 +84,8 @@ int main()
             map_option = display_menu(map_menu);
             if (map_option >= 1 && map_option <= 5)
             {
-                map_option = getMap(&maps[map_option - 1], adventurers, map_option);
+                // 2. Get map.
+                map_option = getMap(&maps[map_option - 1], adventurers, map_option, 1);
             }
             else
             {
@@ -93,7 +93,7 @@ int main()
             }
             if (map_option != 0)
             {
-                display_message("El mapa ha sido cargado correctamente.", GREEN_COLOR, BLACK_COLOR);
+                // display_message("El mapa ha sido cargado correctamente.", GREEN_COLOR, BLACK_COLOR);
             }
             else
             {
@@ -104,7 +104,6 @@ int main()
         case 2:
             if (map_option >= 1 && map_option <= 5)
             {
-                char option = '\0';
                 drawMap(maps[map_option - 1], adventurers, MAGENTA_COLOR, CYAN_COLOR, WHITE_COLOR, RED_COLOR);
                 printf("\nDigite cualquier opcion para continuar: ");
                 scanf(" %c", &option);
@@ -119,6 +118,8 @@ int main()
         case 3:
             if (map_option >= 1 && map_option <= 5)
             {
+
+                // 3. Loop to animate the Maze runner.
                 while (goal_validation)
                 {
                     for (int i = 0; i < MAX_ADVENTURERS; i++)
@@ -165,8 +166,9 @@ int main()
         default:
             break;
         }
-        // 2. Get map.
     } while (!out_validation);
+
+    // 4. End program.
     exitDisplay();
     return EXIT_SUCCESS;
 }

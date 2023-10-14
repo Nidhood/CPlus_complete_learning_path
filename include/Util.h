@@ -16,19 +16,10 @@
 #define WHITE_COLOR 0x80
 
 #define Cls() printf("\033[H\033[J"); // ANSI code to clear screen.
-#ifdef _WIN32
-
-// Para sistemas Windows
-#define Pause() system("pause");
-#else
 
 #define Pause() system("read -n 1 -s -p \"Press any key to continue...\"");
 
-#define RstColor() BackgroundColor(NORMAL_COLOR, NORMAL_COLOR);
-
-#endif // _WIN32
-
-#define RstColor() BackgroundColor(NORMAL_COLOR, NORMAL_COLOR);
+#define RstColor() printf("\033[0;0m");
 
 typedef unsigned char uchar;
 

@@ -4,8 +4,10 @@
 #include <string.h>
 #include <stdlib.h> // rand().
 #include <time.h>   // time().
+#include <math.h>   // sqrt().
 #include "Util.h"   // Colors library.
 #include "AdventurerHeader.h"
+#include "MapHeader.h"
 
 // Global variables:
 #define MAX_SIZE 40
@@ -40,7 +42,9 @@ struct MapS
 // Steps to implement the code:
 
 // 1. Select map (based on the files maps inside the folder 'maps') and get data.
-int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option);
+int getMap(MapT *map, AdventurerT adventurers[MAX_ADVENTURERS], int map_option, int map_probability_option);
+float calculateDistanceToWall(int x, int y, int max_size);
+void updateProbabilities(MapT *map, int x, int y);
 
 // 2. Draw map.
 void drawMap(MapT map, AdventurerT adventurers[MAX_ADVENTURERS], uchar FontColorWall, uchar BgColorWall, uchar FontColorGoal, uchar BgColorGoal);

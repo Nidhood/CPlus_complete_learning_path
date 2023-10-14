@@ -1,7 +1,3 @@
-//
-// Created by Ivan Dario Orozco Ibañez on 10/10/23.
-//
-
 #ifndef INTELLI_MAZERUNNERHEADER_H
 #define INTELLI_MAZERUNNERHEADER_H
 
@@ -12,6 +8,18 @@
 
 // 1. Define the behaviors of adventurers.
 char adventurersMovement(AdventurerT *adventurer, MapT *map);
+
+// 1.1. Define the behavior of the adventurer 1.
+char FSM_BASIC(AdventurerT *adventurer, MapT *map);
+
+// 1.2. Define the behavior of the adventurer 2.
+char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map);
+
+// 1.3. Define the behavior of the adventurer 2.
+char FSM_ROAD_REDUCTION(AdventurerT *adventurer, MapT *map);
+
+// 1.4. Define the behavior of the adventurer 2.
+char FSM_2_AND_3(AdventurerT *adventurer, MapT *map);
 
 // 2. With the new adventurers positions, update the map.
 void updateMap(AdventurerT adventurer, MapT *map);

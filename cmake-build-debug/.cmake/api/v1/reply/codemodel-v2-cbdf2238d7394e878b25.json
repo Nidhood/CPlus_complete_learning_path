@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "intelli",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "intelli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-intelli-Debug-527120ee59f45d10ec6f.json",
+					"name" : "intelli",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/nidhood/Desktop/University/2023/Quinto semestre/Introducci\u00f3n a la programaci\u00f3n Embebida/C/Parciales/intelli/cmake-build-debug",
+		"source" : "/Users/nidhood/Desktop/University/2023/Quinto semestre/Introducci\u00f3n a la programaci\u00f3n Embebida/C/Parciales/intelli"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

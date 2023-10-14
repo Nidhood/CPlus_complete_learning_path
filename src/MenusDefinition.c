@@ -5,7 +5,7 @@ void display_message(const char *message, uchar FontColor, uchar BgColor)
     size_t message_length = strlen(message);
     int total_width = 100; // Ancho total de la línea de separación
     size_t padding = (total_width - message_length) / 2;
-    Cls();
+    Cls()
     BackgroundColor(FontColor, BgColor);
     printf("\n##################################################################################################\n");
     printf("                                                                                                  \n");
@@ -28,9 +28,9 @@ void display_message(const char *message, uchar FontColor, uchar BgColor)
     // Imprimir la línea entre el mensaje y el borde inferior
     printf("\n                                                                                                  \n");
     printf("##################################################################################################\n");
-    RstColor();
+    RstColor()
     sleep(4);
-    Cls();
+    Cls()
 }
 
 int display_menu(MenuOptionsT menu)
@@ -49,7 +49,7 @@ int display_menu(MenuOptionsT menu)
             printf("\n%d. %s", menu.options[i].option_index, menu.options[i].optionDescription);
         }
         BackgroundColor(MAGENTA_COLOR, BLACK_COLOR);
-        printf("\n\nDigite la opcion desada: ");
+        printf("\n\nDigite la opcion deseada: ");
         BackgroundColor(GREEN_COLOR, BLACK_COLOR);
         scanf("%d", &option);
         for (int i = 0; i < menu.num_options; i++)
@@ -72,13 +72,13 @@ int display_menu(MenuOptionsT menu)
 // Shows nice out message for the program :D .
 void exitDisplay()
 {
-    Cls();
+    Cls()
     BackgroundColor(YELLOW_COLOR, BLACK_COLOR);
     printf("\n###################################################################################################");
     printf("\n\n                               Muchas gracias por usar nuestro programa.\n");
-    printf("\n                                         ¡¡¡ Vuelva prontro !!!\n");
+    printf("\n                                         ¡¡¡ Vuelva pronto !!!\n");
     printf("\n###################################################################################################\n");
     sleep(4);
-    RstColor();
-    Cls();
+    RstColor()
+    Cls()
 }

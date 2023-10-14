@@ -20,13 +20,13 @@ typedef enum StateS StateT;
 enum StateS
 {
     STATE_INITIAL,
-    STATE_CHECK_FORWARD,
     STATE_MOVE_FORWARD,
     STATE_TURN_RIGHT,
     STATE_TURN_LEFT,
     STATE_MOVE_BACKWARDS,
     STATE_CLASH,
     STATE_REAPPEAR,
+    STATE_CHECK_PROBABILITIES,
     STATE_FINAL
 
     // Here in the enum State is used to define the possible states of
@@ -96,12 +96,13 @@ struct AdventurerS
     int total_states;                     // Counter of states (ALL).
     int adventurer_index;                 // Index of adventurer in the array of adventurers.
     int adventurer_colitions;             // Number of colitions with another aventurer (MAX 3).
+    int FSM;                              // Type of intelligent algorithm to use (0 = FSM (basic right hand), 1 = FMS (Probability), 2 = FMS (Analitics) , 2 = FMS (Analitics & Probability)).
 };
 
 // Steps to implement the code:
 
 // 1. Create an adventurer.
-AdventurerT setAdventurer(const char *name, uchar FontColorAdventurer, uchar BgColorAdventurer);
+AdventurerT setAdventurer(const char *name, uchar FontColorAdventurer, uchar BgColorAdventurer, int FSM);
 
 void setAdventurerPosition(const char *position, AdventurerT *adventurer);
 #endif
