@@ -64,13 +64,13 @@ int main()
         createMap("Mapa 5", "Mapa 5", FILE_PATH_PREFIX "Map5.txt")};
 
     AdventurerT adventurers[] = {
-        setAdventurer("Thomas", WHITE_COLOR, RED_COLOR, 0 ),
-        setAdventurer("Newt", GREEN_COLOR, BLUE_COLOR, 0),
-        setAdventurer("Minho", BLUE_COLOR, MAGENTA_COLOR, 0),
-        setAdventurer("Chuck", MAGENTA_COLOR, YELLOW_COLOR, 0)};
+        setAdventurer("Thomas", WHITE_COLOR, RED_COLOR, 0),
+        setAdventurer("Newt", GREEN_COLOR, BLUE_COLOR, 1),
+        setAdventurer("Minho", BLUE_COLOR, MAGENTA_COLOR, 2),
+        setAdventurer("Chuck", MAGENTA_COLOR, YELLOW_COLOR, 3)};
 
     // Welcome message.
-    // display_message("¡¡¡ Bienvenidos aventureros al laberinto !!!", YELLOW_COLOR, BLACK_COLOR);
+    display_message("¡¡¡ Bienvenidos aventureros al laberinto !!!", YELLOW_COLOR, BLACK_COLOR);
     do
     {
         out_validation = 0;
@@ -93,7 +93,7 @@ int main()
             }
             if (map_option != 0)
             {
-                // display_message("El mapa ha sido cargado correctamente.", GREEN_COLOR, BLACK_COLOR);
+                display_message("El mapa ha sido cargado correctamente.", GREEN_COLOR, BLACK_COLOR);
             }
             else
             {
@@ -104,10 +104,9 @@ int main()
         case 2:
             if (map_option >= 1 && map_option <= 5)
             {
-                drawProbabilitiesMap(maps[map_option - 1], adventurers, MAGENTA_COLOR, CYAN_COLOR, WHITE_COLOR, RED_COLOR);
-                printf("\n\n");
+                // drawProbabilitiesMap(maps[map_option - 1], adventurers, MAGENTA_COLOR, CYAN_COLOR, WHITE_COLOR, RED_COLOR);
+                // printf("\n\n");
                 drawMap(maps[map_option - 1], adventurers, MAGENTA_COLOR, CYAN_COLOR, WHITE_COLOR, RED_COLOR);
-
                 printf("\nDigite cualquier opcion para continuar: ");
                 scanf(" %c", &option);
             }
