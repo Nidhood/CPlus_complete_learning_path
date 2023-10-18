@@ -7,17 +7,8 @@
 // Global Variables:
 #define MAX_ADVENTURERS 4
 
-// Macros:
-
-#ifdef _WIN32
-
-// Path prefix for Windows
-#define FILE_PATH_PREFIX "..\\Maps\\"
-#else
-
 // Path prefix for Unix-based systems (Linux)
 #define FILE_PATH_PREFIX "Maps/"
-#endif
 
 // Steps to implement the code:
 
@@ -64,9 +55,9 @@ int main()
         createMap("Mapa 5", "Mapa 5", FILE_PATH_PREFIX "Map5.txt")};
 
     AdventurerT adventurers[] = {
-        setAdventurer("Thomas", WHITE_COLOR, RED_COLOR, 0),
-        setAdventurer("Newt", GREEN_COLOR, BLUE_COLOR, 1),
-        setAdventurer("Minho", BLUE_COLOR, MAGENTA_COLOR, 2),
+        setAdventurer("Thomas", WHITE_COLOR, RED_COLOR, 1),
+        setAdventurer("Newt", GREEN_COLOR, BLUE_COLOR, 0),
+        setAdventurer("Minho", GREEN_COLOR, MAGENTA_COLOR, 2),
         setAdventurer("Chuck", MAGENTA_COLOR, YELLOW_COLOR, 3)};
 
     // Welcome message.

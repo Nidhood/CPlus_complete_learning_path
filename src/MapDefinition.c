@@ -20,13 +20,16 @@ int roads(MapT map)
 
 void updateProbabilities(MapT *map, int x, int y)
 {
-    // Reducir la probabilidad del camino elegido a cero
+    // Save the original probability of the chosen path
+    float originalProbability = map->matrix[x][y].probability;
+
+    // Reduce the probability of the chosen path to zero
     map->matrix[x][y].probability = 0.0f;
 
-    // Actualizar las probabilidades de los caminos restantes
+    // Update the probabilities of the remaining paths
     float totalProbability = 0.0f;
 
-    // Calcular la suma total de las probabilidades
+    // Calculate the new total probability
     for (int i = 0; i < MAX_SIZE; i++)
     {
         for (int j = 0; j < MAX_SIZE; j++)
@@ -38,22 +41,23 @@ void updateProbabilities(MapT *map, int x, int y)
         }
     }
 
-    // Asegurarse de que totalProbability no sea cero antes de la normalización
+    // Ensure totalProbability is not zero before normalization
     if (totalProbability > 0.0f)
     {
-        // Normalizar las probabilidades
+        // Normalize the probabilities
         for (int i = 0; i < MAX_SIZE; i++)
         {
             for (int j = 0; j < MAX_SIZE; j++)
             {
                 if (map->matrix[i][j].value == ' ')
                 {
-                    map->matrix[i][j].probability /= totalProbability;
+                    map->matrix[i][j].probability *= (1 - originalProbability) / totalProbability;
                 }
             }
         }
     }
 }
+
 
 char hasAdventurer(const AdventurerIndexT adventurers[MAX_ADVENTURERS])
 {

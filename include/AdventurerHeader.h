@@ -27,6 +27,7 @@ enum StateS
     STATE_CLASH,
     STATE_REAPPEAR,
     STATE_CHECK_PROBABILITIES,
+    STATE_RANDOM_CHOICE,
     STATE_FINAL
 
     // Here in the enum State is used to define the possible states of
@@ -36,7 +37,14 @@ enum StateS
     // 2. STATE_CHECK_FORWARD.
     // 3. STATE_MOVE_FORWARD.
     // 4. STATE_TURN_RIGHT.
-    // 5. STATE_COUNT.
+    // 5. STATE_TURN_LEFT.
+    // 6. STATE_MOVE_BACKWARDS.
+    // 7. STATE_CLASH.
+    // 8. STATE_REAPPEAR.
+    // 9. STATE_CHECK_PROBABILITIES.
+    // 10. STATE_RANDOM_CHOICE.
+    // 11. STATE_BACKTRACK.
+    // 12. STATE_FINAL.
 
     // By assigning these names, we can use them instead of direct numeric
     // values when working with variables of type State. For instance:

@@ -16,10 +16,10 @@ char FSM_BASIC(AdventurerT *adventurer, MapT *map);
 char FSM_PROBABILITIES(AdventurerT *adventurer, MapT *map);
 
 // 1.3. Define the behavior of the adventurer 2.
-char FSM_ROAD_REDUCTION(AdventurerT *adventurer, MapT *map);
+char FSM_RIGHT_HAND_LAY(AdventurerT *adventurer, MapT *map);
 
 // 1.4. Define the behavior of the adventurer 2.
-char FSM_2_AND_3(AdventurerT *adventurer, MapT *map);
+char FSM_RANDOM_DIRECTION(AdventurerT *adventurer, MapT *map);
 
 // 2. With the new adventurers positions, update the map.
 void updateMap(AdventurerT adventurer, MapT *map);
