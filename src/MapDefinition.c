@@ -20,8 +20,6 @@ int roads(MapT map)
 
 void updateProbabilities(MapT *map, int x, int y)
 {
-    // Save the original probability of the chosen path
-    float originalProbability = map->matrix[x][y].probability;
 
     // Reduce the probability of the chosen path to zero
     map->matrix[x][y].probability = 0.0f;
@@ -51,7 +49,7 @@ void updateProbabilities(MapT *map, int x, int y)
             {
                 if (map->matrix[i][j].value == ' ')
                 {
-                    map->matrix[i][j].probability *= (1 - originalProbability) / totalProbability;
+                    map->matrix[i][j].probability =  1 / totalProbability;
                 }
             }
         }
@@ -82,11 +80,24 @@ float calculateDistanceToWall(int x, int y, int max_size)
     float distanceToLeft = x;
     float distanceToRight = max_size - 1 - x;
 
-    // Take the minimum distance to the wall in any direction
-    float distanceToWall = fmin(fmin(distanceToTop, distanceToBottom), fmin(distanceToLeft, distanceToRight));
+    // Find the minimum distance to the wall in any direction
+    float minDistance = distanceToTop;
 
-    return distanceToWall;
+    if (distanceToBottom < minDistance) {
+        minDistance = distanceToBottom;
+    }
+
+    if (distanceToLeft < minDistance) {
+        minDistance = distanceToLeft;
+    }
+
+    if (distanceToRight < minDistance) {
+        minDistance = distanceToRight;
+    }
+
+    return minDistance;
 }
+
 
 float calculateDistanceToCenter(int x, int y, int max_size)
 {
@@ -96,7 +107,6 @@ float calculateDistanceToCenter(int x, int y, int max_size)
 
     // Calculate the Euclidean distance
     float distance = sqrt(pow((float)x - centerX, 2) + pow((float)y - centerY, 2));
-
     return distance;
 }
 

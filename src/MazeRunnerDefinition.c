@@ -1042,26 +1042,7 @@ char FSM_RIGHT_HAND_LAY(AdventurerT *adventurer, MapT *map)
             {
 
                 // Transition to the turn right state:
-                if (adventurer->moveValidation.left && strcmp(adventurer->direction.description, "Arriba") == 0)
-                {
-                    adventurer->currentState = STATE_TURN_RIGHT;
-                }
-                else if (adventurer->moveValidation.right && strcmp(adventurer->direction.description, "Abajo") == 0)
-                {
-                    adventurer->currentState = STATE_TURN_RIGHT;
-                }
-                else if (adventurer->moveValidation.up && strcmp(adventurer->direction.description, "Derecha") == 0)
-                {
-                    adventurer->currentState = STATE_TURN_RIGHT;
-                }
-                else if (adventurer->moveValidation.down && strcmp(adventurer->direction.description, "Izquierda") == 0)
-                {
-                    adventurer->currentState = STATE_TURN_RIGHT;
-                }
-                else
-                {
-                    adventurer->currentState = STATE_TURN_RIGHT;
-                }
+                adventurer->currentState = STATE_TURN_RIGHT;
             }
             adventurer->total_states++;
             return 1;

@@ -24,7 +24,7 @@ struct AdventurerIndexS
 typedef struct dataS dataT;
 struct dataS
 {
-    char value;                                    // Mutable.
+    char value;                                      // Mutable.
     AdventurerIndexT adventurers[MAX_ADVENTURERS]; // Mutable.
     int lastIndex;                                 // Mutable.
     float probability;                             // Mutable.

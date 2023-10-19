@@ -75,7 +75,8 @@ int main()
             map_option = display_menu(map_menu);
             if (map_option >= 1 && map_option <= 5)
             {
-                // 2. Get map.
+
+                // 2. Get map (0 = center, 1 = exterior).
                 map_option = getMap(&maps[map_option - 1], adventurers, map_option, 1);
             }
             else
