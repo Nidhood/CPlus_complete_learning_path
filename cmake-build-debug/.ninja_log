@@ -1,9 +1,0 @@
-# ninja log v5
-1	61	1697296804142266584	CMakeFiles/intelli.dir/src/AdventurerDefinition.c.o	dcf6b9e6aadc455f
-90	133	1697304734562349220	intelli	b89657c374ae165a
-2	55	1697296804138266644	CMakeFiles/intelli.dir/src/MenusDefinition.c.o	cea1d0c8496347c9
-1	62	1697296804142266584	CMakeFiles/intelli.dir/src/Util.c.o	3fe64a1e10e58b03
-1	95	1697304417814541353	CMakeFiles/intelli.dir/src/MazeRunnerDefinition.c.o	3ea61b527e4941b4
-1	90	1697304734510349871	CMakeFiles/intelli.dir/src/MapDefinition.c.o	61b5197c7f84541e
-1	90	1697304734482350221	CMakeFiles/intelli.dir/app/main.c.o	58cf55a7ca2f8729
-0	11	0	clean	3c8e6cc385ee00ba
