@@ -1,0 +1,8 @@
+# ninja log v5
+1	168	1707320484105396442	CMakeFiles/Second_practice.dir/src/AdventurerDefinition.c.o	da3843b6364754a1
+2	171	1707320484106724314	CMakeFiles/Second_practice.dir/src/Util.c.o	3492f3864d105f7e
+2	176	1707320484115298502	CMakeFiles/Second_practice.dir/src/MenusDefinition.c.o	6731cede4a0d7c71
+0	189	1707320484126302799	CMakeFiles/Second_practice.dir/main.c.o	342b4a48a3e9d378
+1	207	1707320484146212678	CMakeFiles/Second_practice.dir/src/MapDefinition.c.o	4a95d2d2a3af4898
+2	235	1707320484176506409	CMakeFiles/Second_practice.dir/src/MazeRunnerDefinition.c.o	6f6e69d1536c5806
+235	344	1707320484286879868	Second_practice	91586bfbaeb80bde

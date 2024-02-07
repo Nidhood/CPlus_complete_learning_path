@@ -1,0 +1,3 @@
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug/CMakeFiles/Second_practice.dir
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

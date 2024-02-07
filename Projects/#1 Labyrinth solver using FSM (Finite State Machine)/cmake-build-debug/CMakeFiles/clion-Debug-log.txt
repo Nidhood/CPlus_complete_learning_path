@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S "/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)" -B "/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug

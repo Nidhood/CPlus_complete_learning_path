@@ -1,0 +1,3 @@
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/cmake-build-debug/CMakeFiles/Second_practice.dir
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

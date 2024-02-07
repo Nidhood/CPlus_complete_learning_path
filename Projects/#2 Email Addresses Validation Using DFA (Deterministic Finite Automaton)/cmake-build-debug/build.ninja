@@ -1,0 +1,161 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: Second_practice
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/#2$ Email$ Addresses$ Validation$ Using$ DFA$ (Deterministic$ Finite$ Automaton)/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target Second_practice
+
+
+#############################################
+# Order-only phony target for Second_practice
+
+build cmake_object_order_depends_target_Second_practice: phony || CMakeFiles/Second_practice.dir
+
+build CMakeFiles/Second_practice.dir/main.c.o: C_COMPILER__Second_practice_Debug /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/#2$ Email$ Addresses$ Validation$ Using$ DFA$ (Deterministic$ Finite$ Automaton)/main.c || cmake_object_order_depends_target_Second_practice
+  DEP_FILE = CMakeFiles/Second_practice.dir/main.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics -std=gnu11
+  INCLUDES = -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/include" -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/src"
+  OBJECT_DIR = CMakeFiles/Second_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles/Second_practice.dir
+
+build CMakeFiles/Second_practice.dir/src/AFD.c.o: C_COMPILER__Second_practice_Debug /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/#2$ Email$ Addresses$ Validation$ Using$ DFA$ (Deterministic$ Finite$ Automaton)/src/AFD.c || cmake_object_order_depends_target_Second_practice
+  DEP_FILE = CMakeFiles/Second_practice.dir/src/AFD.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics -std=gnu11
+  INCLUDES = -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/include" -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/src"
+  OBJECT_DIR = CMakeFiles/Second_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles/Second_practice.dir/src
+
+build CMakeFiles/Second_practice.dir/src/FileManager.c.o: C_COMPILER__Second_practice_Debug /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/#2$ Email$ Addresses$ Validation$ Using$ DFA$ (Deterministic$ Finite$ Automaton)/src/FileManager.c || cmake_object_order_depends_target_Second_practice
+  DEP_FILE = CMakeFiles/Second_practice.dir/src/FileManager.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics -std=gnu11
+  INCLUDES = -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/include" -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/src"
+  OBJECT_DIR = CMakeFiles/Second_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles/Second_practice.dir/src
+
+build CMakeFiles/Second_practice.dir/src/Util.c.o: C_COMPILER__Second_practice_Debug /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/#2$ Email$ Addresses$ Validation$ Using$ DFA$ (Deterministic$ Finite$ Automaton)/src/Util.c || cmake_object_order_depends_target_Second_practice
+  DEP_FILE = CMakeFiles/Second_practice.dir/src/Util.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics -std=gnu11
+  INCLUDES = -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/include" -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/src"
+  OBJECT_DIR = CMakeFiles/Second_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles/Second_practice.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Second_practice
+
+
+#############################################
+# Link the executable Second_practice
+
+build Second_practice: C_EXECUTABLE_LINKER__Second_practice_Debug CMakeFiles/Second_practice.dir/main.c.o CMakeFiles/Second_practice.dir/src/AFD.c.o CMakeFiles/Second_practice.dir/src/FileManager.c.o CMakeFiles/Second_practice.dir/src/Util.c.o
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
+  OBJECT_DIR = CMakeFiles/Second_practice.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Second_practice
+  TARGET_PDB = Second_practice.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)" -B"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/#2 Email Addresses Validation Using DFA (Deterministic Finite Automaton)/cmake-build-debug
+
+build all: phony Second_practice
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/#2$ Email$ Addresses$ Validation$ Using$ DFA$ (Deterministic$ Finite$ Automaton)/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/#2$ Email$ Addresses$ Validation$ Using$ DFA$ (Deterministic$ Finite$ Automaton)/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
