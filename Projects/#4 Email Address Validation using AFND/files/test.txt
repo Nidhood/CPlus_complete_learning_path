@@ -1,0 +1,17 @@
+aaa@bbb.ccc.ddd
+aaa@b.c.d
+a@b.c.d
+@bbb.ccc.ddd
+aaa@bbb.ccc.ddd.
+aaa@bbb..cc.ddd
+aaa@,bbb,ccc,ddd
+aaa@
+aaa@@bbb.ccc.ddd
+aaa@bb.@bb.ccc.ddd
+aa#@aaa.bbb.ccc
+aaaa@aaaa#.bbb.cc
+aaaa@aaa.bbb.ccc.ddd.eee
+aaa@-.-.-.-.aaa
+.....@aaa.bbb.ccc
+---@aaa.cvcc.bbb
+fernando@aa.cc.bb
