@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)" -B"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug"
+  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#1 Labyrinth solver using FSM (Finite State Machine)" -B"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug"
   description = Re-running CMake...
   generator = 1
 

@@ -1,4 +1,4 @@
-#include "graph.h"
+#include "GraphHeader.h"
 
 void initialize_graph(Graph **g, bool directed)
 {
@@ -48,27 +48,59 @@ void create_link(Graph **g, int x, int y, int weight, bool directed)
         (*g)->nedges += 1;
 }
 
+Graph *buildGraphFromInfo(const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Error opening file %s\n", filename);
+        return NULL;
+    }
+
+    // Assuming the file format is as described with lines like "0>17", "0>8", etc.
+    int max_vertex = -1;
+    int src, dest;
+    while (fscanf(file, "%d>%d\n", &src, &dest) != EOF) {
+        if (dest > max_vertex) {
+            max_vertex = dest;
+        }
+        if (src > max_vertex) {
+            max_vertex = src;
+        }
+    }
+
+    // Create a graph with max_vertex + 1 vertices (assuming vertices are numbered from 0 to max_vertex)
+    Graph *graph = malloc(sizeof(Graph));
+    initialize_graph(&graph, true); // Directed graph
+    if (graph == NULL) {
+        printf("Error creating graph\n");
+        fclose(file);
+        return NULL;
+    }
+
+    // Add edges to the graph
+    rewind(file);
+    while (fscanf(file, "%d>%d\n", &src, &dest) != EOF) {
+        // Assuming weight is always 1
+        create_link(&graph, src, dest, 1, true);
+    }
+
+    fclose(file);
+    return graph;
+}
+
+
+// Print the graph.
 void print_graph(Graph *g) {
-    int i, j;
     Vertex *v;
     Edge *e;
 
-    printf("Graph (%s):\n", g->directed ? "Dirigido" : "No dirigido");
+    // Print the type of graph.
+    printf("Graph (%s):\n", g->directed ? "Directed" : "Not directed");
 
-    for (i = 0; i < g->nvertices + 1; i++) {
+    // Print the vertices and edges.
+    for (int i = 0; i < g->nvertices + 1; i++) {
         v = g->vertex[i];
         if (v) {
-            printf("Vertex %d:", v->x);
-
-            // Mostrar todas las conexiones incluso si no hay aristas salientes
-            for (j = 1; j < g->nvertices + 1; j++) {
-                if (g->directed) {
-                    printf(" %d -> ", j);
-                } else {
-                    printf(" %d -- ", j);
-                }
-            }
-            printf("\n");
+            printf("\nVertex %d:\n", v->x);
 
             if (v->next != NULL) {
                 for (e = (Edge *) v->next; e; e = (Edge *) e->next) {
@@ -81,21 +113,6 @@ void print_graph(Graph *g) {
                 }
             } else {
                 printf("    No edges\n");
-            }
-        }
-    }
-
-    // Mostrar todas las conexiones y nodos de una vez
-    printf("\nAll connections and nodes:\n");
-    for (i = 0; i < g->nvertices + 1; i++) {
-        v = g->vertex[i];
-        if (v) {
-            for (e = (Edge *) v->next; e; e = (Edge *) e->next) {
-                if (g->directed) {
-                    printf("%d -> %d\n", v->x, e->y);
-                } else {
-                    printf("%d -- %d\n", v->x, e->y);
-                }
             }
         }
     }

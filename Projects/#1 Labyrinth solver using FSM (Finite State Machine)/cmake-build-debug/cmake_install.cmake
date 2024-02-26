@@ -1,4 +1,4 @@
-# Install script for directory: /Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)
+# Install script for directory: /Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#1 Labyrinth solver using FSM (Finite State Machine)
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#1 Labyrinth solver using FSM (Finite State Machine)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

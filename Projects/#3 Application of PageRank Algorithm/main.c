@@ -1,22 +1,30 @@
-#include "graph.h"
-#include <stdlib.h>
-#include <stdbool.h>
+#include "AdjacencyMatrixHeader.h"
+#include "MatrixOperationsHeader.h"
+#include "GraphHeader.h"
 
-/* 1-----2---3 */
-/* | ___/|   | */
-/* |/    |   | */
-/* 5-----4---+ */
-int main()
-{
-    Graph *g = malloc(sizeof(Graph));
-    initialize_graph(&g, false);
-    create_link(&g, 1, 2, 1, false);
-    create_link(&g, 1, 5, 1, false);
-    create_link(&g, 2, 5, 1, false);
-    create_link(&g, 2, 4, 1, false);
-    create_link(&g, 2, 3, 1, false);
-    create_link(&g, 3, 4, 1, false);
-    create_link(&g, 4, 5, 1, false);
-    print_graph(g);
+// Main function
+int main() {
+
+    // Build the graph from a file:
+    Graph *g = buildGraphFromInfo("../groups/group_2.txt");
+
+    // Convert the graph to an adjacency matrix:
+    AdjacencyMatrix *matrix = graphToAdjacencyMatrix(g);
+
+    // Print the matrix:
+    printMatrix(matrix);
+
+    // Sum rows of the matrix:
+    AdjacencyMatrix *vector = sumRows(matrix);
+
+    // Print the vector:
+    printMatrix(vector);
+
+    // Free the graph:
+    free(g);
+
+    // Free the matrix:
+    freeMatrix(matrix);
+
     return 0;
 }

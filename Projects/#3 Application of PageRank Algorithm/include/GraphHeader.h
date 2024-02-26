@@ -43,6 +43,10 @@ void insert_edge(Vertex *v, Edge *e);
 // Create a link between two vertices.
 void create_link(Graph **g, int x, int y, int weight, bool directed);
 
+// Build a graph from a file.
+Graph *buildGraphFromInfo(const char *filename);
+
 // Print the graph.
 void print_graph(Graph *g);
+
 #endif

@@ -74,6 +74,13 @@ build CMakeFiles/Third_practice.dir/src/Util.c.o: C_COMPILER__Third_practice_Deb
   OBJECT_DIR = CMakeFiles/Third_practice.dir
   OBJECT_FILE_DIR = CMakeFiles/Third_practice.dir/src
 
+build CMakeFiles/Third_practice.dir/src/graph.c.o: C_COMPILER__Third_practice_Debug /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/C_complete_learning_path/Projects/#4$ Email$ Address$ Validation$ using$ AFND/src/graph.c || cmake_object_order_depends_target_Third_practice
+  DEP_FILE = CMakeFiles/Third_practice.dir/src/graph.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics -std=gnu11
+  INCLUDES = -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#4 Email Address Validation using AFND/include" -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#4 Email Address Validation using AFND/src"
+  OBJECT_DIR = CMakeFiles/Third_practice.dir
+  OBJECT_FILE_DIR = CMakeFiles/Third_practice.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Third_practice
@@ -82,7 +89,7 @@ build CMakeFiles/Third_practice.dir/src/Util.c.o: C_COMPILER__Third_practice_Deb
 #############################################
 # Link the executable Third_practice
 
-build Third_practice: C_EXECUTABLE_LINKER__Third_practice_Debug CMakeFiles/Third_practice.dir/main.c.o CMakeFiles/Third_practice.dir/src/AFD.c.o CMakeFiles/Third_practice.dir/src/FileManager.c.o CMakeFiles/Third_practice.dir/src/Util.c.o
+build Third_practice: C_EXECUTABLE_LINKER__Third_practice_Debug CMakeFiles/Third_practice.dir/main.c.o CMakeFiles/Third_practice.dir/src/AFD.c.o CMakeFiles/Third_practice.dir/src/FileManager.c.o CMakeFiles/Third_practice.dir/src/Util.c.o CMakeFiles/Third_practice.dir/src/graph.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
   OBJECT_DIR = CMakeFiles/Third_practice.dir
   POST_BUILD = :
