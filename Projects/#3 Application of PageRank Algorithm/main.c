@@ -1,30 +1,39 @@
 #include "AdjacencyMatrixHeader.h"
 #include "MatrixOperationsHeader.h"
 #include "GraphHeader.h"
+#include "PageRankAlgorithmHeader.h"
+#include "MenusHeader.h"
 
-// Main function
-int main() {
+int main(int argc, char *argv[]) {
+    if (argc != 4) {
+        display_message("Caution! Make sure the parameters are: \%s alpha epsilon graph_file", RED_COLOR, BLACK_COLOR);
+        return 1;
+    }
 
-    // Build the graph from a file:
-    Graph *g = buildGraphFromInfo("../groups/group_2.txt");
+    // Parse command line arguments:
+    double alpha = strtod(argv[1], NULL);
+    double epsilon = strtod(argv[2], NULL);
+    const char *graph_file = argv[3];
 
-    // Convert the graph to an adjacency matrix:
+    // 1. Build the directed graph from the file:
+    Graph *g = buildGraphFromInfo(graph_file);
+
+    // 2. Convert the graph to a transition matrix:
     AdjacencyMatrix *matrix = graphToAdjacencyMatrix(g);
 
-    // Print the matrix:
-    printMatrix(matrix);
+    // 3. pply the PageRank algorithm:
+    matrix = PageRankAlgorithm(matrix, alpha, g->nvertices, epsilon);
 
-    // Sum rows of the matrix:
-    AdjacencyMatrix *vector = sumRows(matrix);
+    // 4. Iterate the Markov chain method:
+    AdjacencyMatrix *probabilitiesVector = createMatrix(g->nvertices, 1);
+    probabilitiesVector = scalarAddition(probabilitiesVector, 1.0 / g->nvertices);
+    AdjacencyMatrix *obtainedRank = markovChainMethod(matrix, probabilitiesVector, epsilon);
 
-    // Print the vector:
-    printMatrix(vector);
+    // 5. Print the preference of students to work with each other:
+    printTopNodes(obtainedRank);
 
-    // Free the graph:
+    // Free allocated memory
     free(g);
-
-    // Free the matrix:
     freeMatrix(matrix);
-
     return 0;
 }

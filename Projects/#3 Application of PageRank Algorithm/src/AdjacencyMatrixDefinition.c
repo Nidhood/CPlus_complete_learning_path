@@ -1,6 +1,8 @@
 #include "AdjacencyMatrixHeader.h"
 
-// Function to create a matrix of size rows x columns
+#include "AdjacencyMatrixHeader.h"
+
+// Function to create a matrix of size rows x columns and initialize all elements to 0.0
 AdjacencyMatrix *createMatrix(int rows, int columns) {
     AdjacencyMatrix *matrix = malloc(sizeof(AdjacencyMatrix));
     if (matrix == NULL) {
@@ -24,6 +26,11 @@ AdjacencyMatrix *createMatrix(int rows, int columns) {
             free(matrix);
             return NULL; // Error: couldn't allocate memory
         }
+
+        // Initialize all elements to 0.0
+        for (int j = 0; j < columns; j++) {
+            matrix->data[i][j] = 0.0;
+        }
     }
 
     matrix->rows = rows;
@@ -31,6 +38,7 @@ AdjacencyMatrix *createMatrix(int rows, int columns) {
 
     return matrix;
 }
+
 
 // Function to free the memory allocated to the matrix
 void freeMatrix(AdjacencyMatrix *matrix) {
@@ -42,6 +50,16 @@ void freeMatrix(AdjacencyMatrix *matrix) {
         free(matrix);
     }
 }
+
+// Function to free the memory allocated to the vector
+void freeVector(AdjacencyMatrix *vector) {
+    if (vector != NULL && vector->data != NULL) {
+        free(vector->data[0]);  // Liberar solo la columna de datos
+        free(vector->data);     // Liberar el arreglo de punteros
+        free(vector);           // Liberar la estructura de matriz
+    }
+}
+
 
 // Function to get a specific element of the matrix
 double getElement(AdjacencyMatrix *matrix, int row, int column) {

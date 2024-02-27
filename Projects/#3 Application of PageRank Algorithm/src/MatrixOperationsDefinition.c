@@ -49,6 +49,23 @@ AdjacencyMatrix* sumRows(AdjacencyMatrix *matrix) {
     return sumMatrix;
 }
 
+#include "AdjacencyMatrixHeader.h"
+
+// Function to perform scalar addition on an adjacency matrix:
+AdjacencyMatrix *scalarAddition(AdjacencyMatrix *matrix, double scalar) {
+
+    // Create a new matrix to store the result
+    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
+
+    // Perform scalar addition
+    for (int i = 0; i < matrix->rows; i++) {
+        for (int j = 0; j < matrix->columns; j++) {
+            resultMatrix->data[i][j] = matrix->data[i][j] + scalar;
+        }
+    }
+
+    return resultMatrix;
+}
 
 // Function to perform subtraction of two adjacency matrices
 AdjacencyMatrix *subtractMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
@@ -75,36 +92,87 @@ AdjacencyMatrix *subtractMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *mat
     return result;
 }
 
-// Function to perform scalar multiplication on an adjacency matrix
-void scalarMultiplication(AdjacencyMatrix *matrix, int scalar) {
+// Function to perform scalar subtraction on an adjacency matrix
+AdjacencyMatrix *scalarSubtraction(AdjacencyMatrix *matrix, double scalar) {
+
+    // Create a new matrix to store the result
+    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
+
+    // Perform scalar subtraction
     for (int i = 0; i < matrix->rows; i++) {
         for (int j = 0; j < matrix->columns; j++) {
-            matrix->data[i][j] *= scalar;
+            resultMatrix->data[i][j] = matrix->data[i][j] - scalar;
         }
     }
+
+    return resultMatrix;
 }
 
-#include <stdio.h>
+// Function to perform least squares subtraction of two matrices
+AdjacencyMatrix *leastSquaresSubtraction(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
+
+    // Check if matrices have the same dimensions
+    if (matrix1->rows != matrix2->rows || matrix1->columns != matrix2->columns) {
+        printf("Matrices must have the same dimensions for subtraction\n");
+        return NULL;
+    }
+
+    // Create a new matrix to store the result
+    int rows = matrix1->rows;
+    int columns = matrix1->columns;
+    AdjacencyMatrix *result = createMatrix(rows, columns);
+    if (result == NULL) {
+        printf("Memory allocation failed\n");
+        return NULL;
+    }
+
+    // Perform least squares subtraction
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            double diff = matrix1->data[i][j] - matrix2->data[i][j];
+            result->data[i][j] = diff * diff; // Square the difference
+        }
+    }
+
+    return result;
+}
+
+
+// Function to perform scalar multiplication on an adjacency matrix
+AdjacencyMatrix *scalarMultiplication(AdjacencyMatrix *matrix, double scalar) {
+    // Create a new matrix to store the result
+    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
+
+    // Perform scalar multiplication
+    for (int i = 0; i < matrix->rows; i++) {
+        for (int j = 0; j < matrix->columns; j++) {
+            resultMatrix->data[i][j] = matrix->data[i][j] * scalar;
+        }
+    }
+
+    return resultMatrix;
+}
 
 // Function to perform scalar division on an adjacency matrix
-void scalarDivision(AdjacencyMatrix *matrix, int scalar) {
-
+AdjacencyMatrix *scalarDivision(AdjacencyMatrix *matrix, double scalar) {
     // Check if scalar is zero
     if (scalar == 0) {
         printf("Division by zero is not allowed\n");
-        return;
+        return NULL;
     }
+
+    // Create a new matrix to store the result
+    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
 
     // Perform scalar division
     for (int i = 0; i < matrix->rows; i++) {
         for (int j = 0; j < matrix->columns; j++) {
-            matrix->data[i][j] /= scalar;
+            resultMatrix->data[i][j] = matrix->data[i][j] / scalar;
         }
     }
+
+    return resultMatrix;
 }
-
-
-
 
 // Function to perform element-wise multiplication (Hadamard product) of two adjacency matrices
 AdjacencyMatrix *elementWiseProduct(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
@@ -209,4 +277,52 @@ AdjacencyMatrix *transposeMatrix(AdjacencyMatrix *matrix) {
     }
 
     return transposed;
+}
+
+// Bubble sort algorithm
+void bubbleSort(double arr[], int indices[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                // Swap probabilities
+                double temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                // Swap indices
+                int tempIndex = indices[j];
+                indices[j] = indices[j + 1];
+                indices[j + 1] = tempIndex;
+            }
+        }
+    }
+}
+
+// Print top nodes based on probabilities
+void printTopNodes(AdjacencyMatrix *probabilitiesVector) {
+    int n = probabilitiesVector->rows;
+    double *probabilities = malloc(n * sizeof(double));
+    int *indices = malloc(n * sizeof(int));
+
+    // Copy probabilities and indices
+    for (int i = 0; i < n; i++) {
+        probabilities[i] = probabilitiesVector->data[i][0];
+        indices[i] = i;
+    }
+
+    // Sort probabilities and corresponding indices
+    bubbleSort(probabilities, indices, n);
+
+    // Print top nodes
+    printf("Top nodes based on probabilities:\n\n");
+    for (int i = 0; i < n; i++) {
+        if(i < 9){
+            printf("#%d.  Node %d: \tProbability %.6f\n", i+1, indices[i], probabilities[i]);
+        } else {
+            printf("#%d. Node %d: \tProbability %.6f\n", i+1, indices[i], probabilities[i]);
+        }
+    }
+
+    // Free allocated memory
+    free(probabilities);
+    free(indices);
 }

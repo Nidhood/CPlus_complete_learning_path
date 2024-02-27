@@ -15,6 +15,7 @@ typedef struct {
 // Function prototypes:
 AdjacencyMatrix *createMatrix(int rows, int columns);
 void freeMatrix(AdjacencyMatrix *matrix);
+void freeVector(AdjacencyMatrix *vector);
 double getElement(AdjacencyMatrix *matrix, int row, int column);
 void setElement(AdjacencyMatrix *matrix, int row, int column, double value);
 AdjacencyMatrix* graphToAdjacencyMatrix(Graph *g);

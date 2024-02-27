@@ -88,6 +88,13 @@ build CMakeFiles/Proyecto.dir/src/MatrixOperationsDefinition.c.o: C_COMPILER__Pr
   OBJECT_DIR = CMakeFiles/Proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles/Proyecto.dir/src
 
+build CMakeFiles/Proyecto.dir/src/PageRankAlgorithmDefinition.c.o: C_COMPILER__Proyecto_Debug /Users/nidhood/Desktop/University/2024/Sexto$ semestre/Teoría$ de$ la$ computación/Programming$ practices/C_complete_learning_path/Projects/#3$ Application$ of$ PageRank$ Algorithm/src/PageRankAlgorithmDefinition.c || cmake_object_order_depends_target_Proyecto
+  DEP_FILE = CMakeFiles/Proyecto.dir/src/PageRankAlgorithmDefinition.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics -std=gnu11
+  INCLUDES = -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/include" -I"/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/src"
+  OBJECT_DIR = CMakeFiles/Proyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles/Proyecto.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Proyecto
@@ -96,7 +103,7 @@ build CMakeFiles/Proyecto.dir/src/MatrixOperationsDefinition.c.o: C_COMPILER__Pr
 #############################################
 # Link the executable Proyecto
 
-build Proyecto: C_EXECUTABLE_LINKER__Proyecto_Debug CMakeFiles/Proyecto.dir/main.c.o CMakeFiles/Proyecto.dir/src/GraphDefinition.c.o CMakeFiles/Proyecto.dir/src/MenusDefinition.c.o CMakeFiles/Proyecto.dir/src/UtilDefinition.c.o CMakeFiles/Proyecto.dir/src/AdjacencyMatrixDefinition.c.o CMakeFiles/Proyecto.dir/src/MatrixOperationsDefinition.c.o
+build Proyecto: C_EXECUTABLE_LINKER__Proyecto_Debug CMakeFiles/Proyecto.dir/main.c.o CMakeFiles/Proyecto.dir/src/GraphDefinition.c.o CMakeFiles/Proyecto.dir/src/MenusDefinition.c.o CMakeFiles/Proyecto.dir/src/UtilDefinition.c.o CMakeFiles/Proyecto.dir/src/AdjacencyMatrixDefinition.c.o CMakeFiles/Proyecto.dir/src/MatrixOperationsDefinition.c.o CMakeFiles/Proyecto.dir/src/PageRankAlgorithmDefinition.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
   OBJECT_DIR = CMakeFiles/Proyecto.dir
   POST_BUILD = :

@@ -10,7 +10,7 @@ add_executable(Proyecto
         src/UtilDefinition.c
         src/AdjacencyMatrixDefinition.c
         src/MatrixOperationsDefinition.c
-        )
+        src/PageRankAlgorithmDefinition.c)
 
 include_directories(include)
 include_directories(src)
