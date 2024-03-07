@@ -1,0 +1,3 @@
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Talleres/Taller #1/cmake-build-debug/CMakeFiles/Taller__1.dir
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Talleres/Taller #1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Talleres/Taller #1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
