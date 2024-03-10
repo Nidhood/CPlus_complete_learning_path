@@ -1,4 +1,4 @@
-#include "GraphHeader.h"
+#include "../include/GraphHeader.h"
 
 void initialize_graph(Graph **g, bool directed)
 {

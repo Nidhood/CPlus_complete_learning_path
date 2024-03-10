@@ -1,4 +1,4 @@
-#include "MatrixOperationsHeader.h"
+#include "../include/MatrixOperationsHeader.h"
 
 // Function to perform addition of two adjacency matrices:
 AdjacencyMatrix *addMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
@@ -48,8 +48,6 @@ AdjacencyMatrix* sumRows(AdjacencyMatrix *matrix) {
     // Return the sum matrix
     return sumMatrix;
 }
-
-#include "AdjacencyMatrixHeader.h"
 
 // Function to perform scalar addition on an adjacency matrix:
 AdjacencyMatrix *scalarAddition(AdjacencyMatrix *matrix, double scalar) {
@@ -298,7 +296,7 @@ void bubbleSort(double arr[], int indices[], int n) {
 }
 
 // Print top nodes based on probabilities
-void printTopNodes(AdjacencyMatrix *probabilitiesVector) {
+void printTopNodes(AdjacencyMatrix *probabilitiesVector, NumberName *numberName) {
     int n = probabilitiesVector->rows;
     double *probabilities = malloc(n * sizeof(double));
     int *indices = malloc(n * sizeof(int));
@@ -316,9 +314,9 @@ void printTopNodes(AdjacencyMatrix *probabilitiesVector) {
     printf("Top nodes based on probabilities:\n\n");
     for (int i = 0; i < n; i++) {
         if(i < 9){
-            printf("#%d.  Node %d: \tProbability %.6f\n", i+1, indices[i], probabilities[i]);
+            printf("#%d.  '%s' (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
         } else {
-            printf("#%d. Node %d: \tProbability %.6f\n", i+1, indices[i], probabilities[i]);
+            printf("#%d. '%s' (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
         }
     }
 

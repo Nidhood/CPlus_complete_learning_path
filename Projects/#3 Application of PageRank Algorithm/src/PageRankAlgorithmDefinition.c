@@ -1,5 +1,5 @@
-#include "PageRankAlgorithmHeader.h"
-#include "MatrixOperationsHeader.h"
+#include "../include/PageRankAlgorithmHeader.h"
+#include "../include/MatrixOperationsHeader.h"
 
 // Apply the PageRank algorithm to the given matrix:
 AdjacencyMatrix *PageRankAlgorithm(AdjacencyMatrix *matrix, double alpha, int n_nodes, double epsilon){

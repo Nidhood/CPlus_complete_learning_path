@@ -1,6 +1,4 @@
-#include "AdjacencyMatrixHeader.h"
-
-#include "AdjacencyMatrixHeader.h"
+#include "../include/AdjacencyMatrixHeader.h"
 
 // Function to create a matrix of size rows x columns and initialize all elements to 0.0
 AdjacencyMatrix *createMatrix(int rows, int columns) {
@@ -80,6 +78,7 @@ void setElement(AdjacencyMatrix *matrix, int row, int column, double value) {
 
 // Function to convert a graph to an adjacency matrix using the PageRank algorithm
 AdjacencyMatrix* graphToAdjacencyMatrix(Graph *g) {
+
     // Calculate the number of nodes in the graph
     int numNodes = g->nvertices;
 

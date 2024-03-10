@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "AdjacencyMatrixHeader.h"
+#include "NumberNameEquivalenceHeader.h"
 
 // Function to perform addition of two adjacency matrices:
 AdjacencyMatrix *addMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2);
@@ -44,6 +45,6 @@ AdjacencyMatrix *transposeMatrix(AdjacencyMatrix *matrix);
 void bubbleSort(double arr[], int indices[], int n);
 
 // Print top nodes based on probabilities
-void printTopNodes(AdjacencyMatrix *probabilitiesVector);
+void printTopNodes(AdjacencyMatrix *probabilitiesVector, NumberName *numberName);
 
 #endif

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define N 100
+#define N 3240
 
 // Data structures:
 
