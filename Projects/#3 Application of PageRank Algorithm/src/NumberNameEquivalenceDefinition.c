@@ -1,6 +1,6 @@
 #include "../include/NumberNameEquivalenceHeader.h"
 
-// Create a NumberName structure from a file
+// Create a NumberName structure from a file:
 NumberName *createNumberName(const char *fileName) {
     FILE *file = fopen(fileName, "r");
     if (file == NULL) {
@@ -8,59 +8,68 @@ NumberName *createNumberName(const char *fileName) {
         return NULL;
     }
 
-    // Inicializar la estructura NumberName
+    // Initialize the structure NumberName:
     NumberName numberName;
 
-    // Arreglos para almacenar los nombres y números de los papeles
+    // Arrays to store the names and numbers of the papers:
     char paperNames[MAX_PAPER_NAME][MAX_LINE_LENGTH];
     int paperNumbers[MAX_PAPER_NAME];
 
-    int paperCount = 0; // Contador para rastrear la cantidad de papeles procesados
+    // Counter to track the amount of papers processed:
+    int paperCount = 0;
 
     char line[MAX_LINE_LENGTH];
     while (fgets(line, MAX_LINE_LENGTH, file) != NULL && paperCount < MAX_PAPER_NAME) {
-        char *delimiter = strchr(line, '>');
+        char *delimiter = strchr(line, ',');
         if (delimiter != NULL) {
-            *delimiter = '\0'; // Terminar la cadena en '>' para separar el nombre del papel
-            strcpy(paperNames[paperCount], line); // Copiar el nombre del papel
-            paperNumbers[paperCount] = atoi(delimiter + 1); // Asignar el número del papel
+
+            // Split the line into the paper name and the paper number:
+            *delimiter = '\0';
+
+            // Copy the paper name:
+            strcpy(paperNames[paperCount], line);
+
+            // Assign the paper number:
+            paperNumbers[paperCount] = atoi(delimiter + 1);
             paperCount++;
         }
     }
-
     fclose(file);
 
-
-
-    // Copiar los datos de los papeles a la estructura NumberName
+    // Copy all data to the structure NumberName:
     for (int i = 0; i < paperCount; i++) {
-        // Asignar memoria para un objeto Paper
+
+        // Assign the memory for a Paper object:
         numberName.papers[i] = (Paper *)malloc(sizeof(Paper));
         if (numberName.papers[i] == NULL) {
             perror("Memory allocation failed");
-            // Liberar la memoria asignada previamente
+
+            // Free the memory allocated previously:
             for (int j = 0; j < i; j++) {
                 free(numberName.papers[j]->paperName);
                 free(numberName.papers[j]);
             }
             return NULL;
         }
-        // Asignar memoria para el nombre del papel
+
+        // Assign the memory for the paper name:
         numberName.papers[i]->paperName = strdup(paperNames[i]);
         if (numberName.papers[i]->paperName == NULL) {
             perror("Memory allocation failed");
-            // Liberar la memoria asignada previamente
+
+            // Free the memory allocated previously:
             for (int j = 0; j <= i; j++) {
                 free(numberName.papers[j]->paperName);
                 free(numberName.papers[j]);
             }
             return NULL;
         }
-        // Asignar el número del papel
+
+        // Assign the number of the paper:
         numberName.papers[i]->paperNumber = paperNumbers[i];
     }
 
-    // Asignar la memoria necesaria para la estructura NumberName y copiar los datos
+    // Assign the memory for the file name:
     static NumberName result; // Estructura estática
     memcpy(&result, &numberName, sizeof(NumberName));
 

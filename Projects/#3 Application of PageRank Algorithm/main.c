@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         }
 
         // 1.2. Get the name and the number of the papers:
-        NumberName *numberName = createNumberName("csvToGraph/number_name_equivalence.txt");
+        NumberName *numberName = createNumberName("csvToGraph/number_name_equivalence.csv");
 
         // 2. Convert the graph to a transition matrix:
         TransitionMatrix *matrix = graphToTransitionMatrix(g);
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
         }
 
         // 1.2. Get the name and the number of the papers:
-        NumberName *numberName = createNumberName("csvToGraph/number_name_equivalence.txt");
+        NumberName *numberName = createNumberName("csvToGraph/number_name_equivalence.csv");
 
         // 2. Convert the  adjacency matrix to a transition matrix:
         TransitionMatrix *matrix = AdjacencyMatrixToTransitionMatrix(adjacencyMatrix);
