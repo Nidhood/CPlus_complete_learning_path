@@ -43,30 +43,30 @@ Follow these steps to prepare and execute the project, allowing you to begin ana
 With the project compiled, you are ready to run the program and explore the relationships in your specific network.
 
 ```
-./<executable name> <epsilon> <alpha> <graph_file>
+./<executable name> <alpha> <epsilon> <graph_file>
 ```
 
-Replace `<executable name>`, `<epsilon>`, `<alpha>`, and `<graph_file>` with the appropriate values for your analysis.
+Replace `<executable name>`, `<alpha>`, `<epsilon>`, and `<graph_file>` with the appropriate values for your analysis.
 
 #### Examples of Graph Files:
 
-- `../data/group_1(graph).txt`
-- `../data/group_1(matrix).txt`
-- `../data/group_2(graph).txt`
-- `../data/group_2(matrix).txt`
-- `../data/group_3(graph).txt`
-- `../data/group_3(matrix).txt`
-- `../data/reference_graph.txt`
+- `data/group_1(graph).txt`
+- `data/group_1(matrix).txt`
+- `data/group_2(graph).txt`
+- `data/group_2(matrix).txt`
+- `data/group_3(graph).txt`
+- `data/group_3(matrix).txt`
+- `data/reference_graph.txt`
 
-These files symbolize different networks that you can analyze 🕵️‍♂️, adjusting the parameters `<epsilon>` and `<alpha>` according to your specific needs.
+These files symbolize different networks that you can analyze 🕵️‍♂️, adjusting the parameters `<alpha>` and `<epsilon>` according to your specific needs.
 
 ### Example of Use:
 
 ```
-./pagerank_analyzer 0.01 0.85 ../data/group_2(matrix).txt
+./pagerank_analyzer 0.85 0.01 data/group_2(matrix).txt
 ```
 
-This command starts the analysis of the network defined in `group_2(matrix).txt`, using an `epsilon` of 0.01 and an `alpha` of 0.85, adapting to a wide range of applications and providing valuable insights into the relationships within the analyzed network 📊.
+This command starts the analysis of the network defined in `group_2(matrix).txt`, using an `alpha` of 0.85 and an `epsilon` of 0.01, adapting to a wide range of applications and providing valuable insights into the relationships within the analyzed network 📊.
 
 ---
 

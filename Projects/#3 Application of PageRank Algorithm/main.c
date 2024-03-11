@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         }
 
         // 1.2. Get the name and the number of the papers:
-        NumberName *numberName = createNumberName("../csvToGraph/number_name_equivalence.txt");
+        NumberName *numberName = createNumberName("csvToGraph/number_name_equivalence.txt");
 
         // 2. Convert the graph to a transition matrix:
         TransitionMatrix *matrix = graphToTransitionMatrix(g);
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
         printTopNodesPapers(obtainedRank, numberName);
 
         // 6. Save the results to a file:
-        saveResultsPageRankAlgorithmRankingPapers(obtainedRank, numberName, "../results/papers_ranking.csv");
+        saveResultsPageRankAlgorithmRankingPapers(obtainedRank, numberName, "results/papers_ranking.csv");
 
         // Free allocated memory
         free(g);
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
         }
 
         // 1.2. Get the name and the number of the papers:
-        NumberName *numberName = createNumberName("../csvToGraph/number_name_equivalence.txt");
+        NumberName *numberName = createNumberName("csvToGraph/number_name_equivalence.txt");
 
         // 2. Convert the  adjacency matrix to a transition matrix:
         TransitionMatrix *matrix = AdjacencyMatrixToTransitionMatrix(adjacencyMatrix);
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
         printTopNodesStudents(obtainedRank, numberName);
 
         // 6. Save the results to a file:
-        saveResultsPageRankAlgorithmRankingStudents(obtainedRank, numberName, "../results/students_ranking.csv");
+        saveResultsPageRankAlgorithmRankingStudents(obtainedRank, numberName, "results/students_ranking.csv");
 
         // Free allocated memory:
         freeAdjacencyMatrix(adjacencyMatrix);
