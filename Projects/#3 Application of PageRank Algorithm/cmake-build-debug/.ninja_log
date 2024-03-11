@@ -8,3 +8,15 @@
 163	261	1710119725670275196	Proyecto	389d02f921e45e2
 6	259	1710040763809856272	CMakeFiles/Proyecto.dir/src/NumberNameEquivalenceDefinition.c.o	caee2d83a0aa3475
 1	71	1710090944112134653	CMakeFiles/Proyecto.dir/src/AdjacencyMatrixDefinition.c.o	32a468d2f56484aa
+1	115	1710126386059576068	CMakeFiles/Proyecto.dir/src/GraphDefinition.c.o	9109a34b7b9ba40d
+3	116	1710126386059536244	CMakeFiles/Proyecto.dir/src/NumberNameEquivalenceDefinition.c.o	2bad85bce286bf75
+0	117	1710126386061750462	CMakeFiles/Proyecto.dir/main.c.o	1e1b44410867cce9
+1	117	1710126386060989241	CMakeFiles/Proyecto.dir/src/TransitionMatrixDefinition.c.o	22b5b5accc5ab73f
+2	119	1710126386063829794	CMakeFiles/Proyecto.dir/src/PageRankAlgorithmDefinition.c.o	ea1cb88f1bd6c18f
+2	124	1710126386070180773	CMakeFiles/Proyecto.dir/src/MatrixOperationsDefinition.c.o	e5d06e7473d5ec5d
+115	167	1710126386113832258	CMakeFiles/Proyecto.dir/src/AdjacencyMatrixDefinition.c.o	8aa141ce3f3141f8
+167	225	1710126386170089951	Proyecto	389d02f921e45e2
+1	96	1710126427711240037	CMakeFiles/Proyecto.dir/main.c.o	1e1b44410867cce9
+96	153	1710126427765035189	Proyecto	389d02f921e45e2
+0	92	1710126445194500360	CMakeFiles/Proyecto.dir/main.c.o	1e1b44410867cce9
+92	146	1710126445246063218	Proyecto	389d02f921e45e2
