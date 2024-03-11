@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_PAPER_NAME 178
+#define MAX_PAPER_NAME 3237
 #define MAX_LINE_LENGTH 1000
 
 // Data structures:

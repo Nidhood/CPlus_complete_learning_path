@@ -4,6 +4,7 @@
 #include "include/PageRankAlgorithmHeader.h"
 #include "include/NumberNameEquivalenceHeader.h"
 #include "include/AdjacencyMatrixHeader.h"
+#include "include/MetricsHeader.h"
 
 int main(int argc, char *argv[]) {
     if (argc != 4) {
@@ -19,6 +20,10 @@ int main(int argc, char *argv[]) {
     // Detect the data structure to use:
     if(isGraphFile(graph_file)){
 
+        // #########################################################################################################################
+        // #                               PageRank Analysis with the amount of edges connections                                  #
+        // #########################################################################################################################
+
         // 1. Build the directed graph from the file:
         Graph *g = buildGraphFromInfo(graph_file);
         if(g == NULL) {
@@ -27,7 +32,7 @@ int main(int argc, char *argv[]) {
         }
 
         // 1.2. Get the name and the number of the papers:
-        NumberName *numberName = createNumberName("csvToGraph/number_name_equivalence.csv");
+        NumberName *numberName = createNumberName("../csvToGraph/number_name_equivalence.csv");
 
         // 2. Convert the graph to a transition matrix:
         TransitionMatrix *matrix = graphToTransitionMatrix(g);
@@ -36,24 +41,54 @@ int main(int argc, char *argv[]) {
         matrix = dampingFunction(matrix);
 
         // 3. Apply the PageRank algorithm:
-        matrix = PageRankAlgorithm(matrix, alpha, g->nvertices, epsilon);
+        matrix = PageRankAlgorithm(matrix, alpha, 3237, epsilon);
 
         // 4. Iterate the Markov chain method:
-        TransitionMatrix *probabilitiesVector = createMatrix(g->nvertices, 1);
-        probabilitiesVector = scalarAddition(probabilitiesVector, 1.0 / g->nvertices);
+        TransitionMatrix *probabilitiesVector = createMatrix(3237, 1);
+        probabilitiesVector = scalarAddition(probabilitiesVector, 1.0 / 3237);
         TransitionMatrix *obtainedRank = markovChainMethod(matrix, probabilitiesVector, epsilon);
 
-        // 5. Print the preference of students to work with each other:
+        // 5. Print the preference of the papers to be cited:
         printTopNodesPapers(obtainedRank, numberName);
 
         // 6. Save the results to a file:
-        saveResultsPageRankAlgorithmRankingPapers(obtainedRank, numberName, "results/papers_ranking.csv");
+        saveResultsPageRankAlgorithmRankingPapers(obtainedRank, numberName, "../results/papers_ranking.csv");
 
-        // Free allocated memory
-        free(g);
-        freeMatrix(matrix);
+        // #########################################################################################################################
+        // #                             PageRank Analysis with the relevance factor of the papers                                 #
+        // #########################################################################################################################
+
+        // 1. Get the relevance factor of the papers:
+        MetricsPaper *metricsPaper = createMetricsPaper("../validation_metrics/relevance_factory.csv");
+
+        // 2. Get reference number name:
+        NumberName *numberNameReferences = createNumberName("../csvToGraph/number_name_equivalence.csv");
+
+        // 3. Add the weight to the graph edges with the relevance factor:
+        addWeightToGraphWithRelevanceFactory(g, metricsPaper, numberNameReferences);
+
+        // 4. Convert the graph to a transition matrix with the relevance factor inside the weights of the edges:
+        TransitionMatrix *matrixRelevanceFactor = graphToTransitionMatrixWithRelevanceFactor(g);
+
+        // 4.1. Apply the damping function to the matrix:
+        matrixRelevanceFactor = dampingFunction(matrixRelevanceFactor);
+
+        // 5. Apply the PageRank algorithm with the relevance factor:
+        matrixRelevanceFactor = PageRankAlgorithm(matrixRelevanceFactor, alpha, 3237, epsilon);
+
+        // 6. Iterate the Markov chain method with the relevance factor:
+        TransitionMatrix *probabilitiesVectorRelevanceFactor = createMatrix(3237, 1);
+        probabilitiesVectorRelevanceFactor = scalarAddition(probabilitiesVectorRelevanceFactor, 1.0 / 3237);
+        TransitionMatrix *obtainedRankRelevanceFactor = markovChainMethod(matrixRelevanceFactor, probabilitiesVectorRelevanceFactor, epsilon);
+
+        // 7. Print the preference of the papers to be cited:
+        printTopNodesPapers(obtainedRank, numberName);
+
+        // 8. Save the results to a file with the relevance factor:
+        saveResultsPageRankAlgorithmRankingPapers(obtainedRankRelevanceFactor, numberName, "../results/papers_ranking_relevance_factor.csv");
 
     } else {
+
         // 1. Build the adjacency matrix from the file:
         AdjacencyMatrix *adjacencyMatrix = createAdjacencyMatrix(graph_file);
         if(adjacencyMatrix == NULL) {

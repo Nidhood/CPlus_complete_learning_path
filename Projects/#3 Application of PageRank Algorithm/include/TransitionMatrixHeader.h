@@ -5,9 +5,8 @@
 #include <stdlib.h> // Standard library definitions
 #include "GraphHeader.h" // Graph structure
 #include "AdjacencyMatrixHeader.h" // Adjacency matrix structure
-
-// Global variables:
-#define MAX_N_NODES 21
+#include "MetricsHeader.h" // MetricsPaper structure
+#include "NumberNameEquivalenceHeader.h" // NumberName structure
 
 // Definition of the matrix structure:
 typedef struct {
@@ -23,8 +22,10 @@ void freeVector(TransitionMatrix *vector);
 double getElement(TransitionMatrix *matrix, int row, int column);
 void setElement(TransitionMatrix *matrix, int row, int column, double value);
 TransitionMatrix *graphToTransitionMatrix(Graph *g);
+TransitionMatrix *graphToTransitionMatrixWithRelevanceFactor(Graph *g);
 TransitionMatrix *AdjacencyMatrixToTransitionMatrix(AdjacencyMatrix *adjacencyMatrix);
 TransitionMatrix *dampingFunction(TransitionMatrix *matrix);
 void printMatrix(TransitionMatrix *matrix);
+void printMatrixWithoutZeros(TransitionMatrix *matrix);
 
 #endif

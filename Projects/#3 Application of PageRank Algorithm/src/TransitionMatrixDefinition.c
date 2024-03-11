@@ -80,7 +80,7 @@ void setElement(TransitionMatrix *matrix, int row, int column, double value) {
 TransitionMatrix* graphToTransitionMatrix(Graph *g) {
 
     // Calculate the number of nodes in the graph
-    int numNodes = g->nvertices;
+    int numNodes = 3237;
 
     // Create a new adjacency matrix with dimensions numNodes x numNodes
     TransitionMatrix *adjMatrix = createMatrix(numNodes, numNodes);
@@ -111,6 +111,33 @@ TransitionMatrix* graphToTransitionMatrix(Graph *g) {
 
     // Return the resulting adjacency matrix
     return adjMatrix;
+}
+
+// Function to convert a graph to an adjacency matrix using the PageRank algorithm with the relevance factor:
+TransitionMatrix *graphToTransitionMatrixWithRelevanceFactor(Graph *g) {
+
+    // Calculate the number of nodes in the graph
+    int numNodes = 3237;
+
+    // Create a new adjacency matrix with dimensions numNodes x numNodes
+    TransitionMatrix *transitionMatrix = createMatrix(numNodes, numNodes);
+
+    // Iterate over the vertices of the graph
+    for (int i = 0; i < g->nvertices; i++) {
+        Vertex *currentVertex = g->vertex[i];
+        Edge *currentEdge = (Edge *) currentVertex->next;
+
+        // Update probabilities for each connection of the current vertex
+        while (currentEdge != NULL) {
+            setElement(transitionMatrix, i, currentEdge->y, currentEdge->weight);
+            double number = currentEdge->weight;
+            double weight = getElement(transitionMatrix, i, currentEdge->y);
+            currentEdge = (Edge *) currentEdge->next;
+        }
+    }
+
+    // Return the resulting transition matrix
+    return transitionMatrix;
 }
 
 // Function to convert an adjacency matrix to a transition matrix with the next format:
@@ -163,6 +190,24 @@ void printMatrix(TransitionMatrix *matrix) {
     for (int i = 0; i < matrix->rows; i++) {
         for (int j = 0; j < matrix->columns; j++) {
             printf("%f\t", matrix->data[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Function to print the matrix without zeros:
+void printMatrixWithoutZeros(TransitionMatrix *matrix) {
+    if (matrix == NULL) {
+        printf("Matrix is NULL\n");
+        return;
+    }
+
+    printf("Matrix (%d x %d):\n", matrix->rows, matrix->columns);
+    for (int i = 0; i < matrix->rows; i++) {
+        for (int j = 0; j < matrix->columns; j++) {
+            if (matrix->data[i][j] != 0.0) {
+                printf("%f\t", matrix->data[i][j]);
+            }
         }
         printf("\n");
     }

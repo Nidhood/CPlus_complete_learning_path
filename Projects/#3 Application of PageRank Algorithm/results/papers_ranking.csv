@@ -1,179 +1,179 @@
 Rank,No.,Paper,Probability
-1,92,Very Deep Convolutional Networks for Large-Scale Image Recognition,0.015283
-2,165,Machine recognition of hand-drawn circuit diagrams,0.011002
-3,72,Segmentation and Recognition of Electronic Components in Hand-Drawn Circuit Diagrams,0.010534
-4,68,Automatic Information Extraction from Piping and Instrumentation Diagrams,0.009753
-5,83,Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks,0.009160
-6,174,An Automatic Circuit Diagram Reader with Loop-Structured-Based Symbol Recognition,0.008987
-7,152,SketchREAD: A Multi-Domain Sketch Recognition Engine,0.008844
-8,132,On-line hand-drawn electric circuit diagram recognition using 2D dynamic programming,0.008778
-9,39,Deep neural network for automatic image recognition of engineering diagrams,0.008751
-10,172,Specifying gestures by example,0.008391
-11,43,A general framework for the recognition of online handwritten graphics,0.008364
-12,146,Combining geometry and domain knowledge to interpret hand-drawn diagrams,0.008249
-13,64,Handwritten electric circuit diagram recognition: An approach based on finite state machine,0.008140
-14,98,Rich feature hierarchies for accurate object detection and semantic segmentation,0.007833
-15,149,LADDER. a sketching language for user interface developers,0.007792
-16,125,First Experiments on a new Online Handwritten Flowchart Database,0.007756
-17,154,Distinctive image features from scale-invariant keypoints,0.007715
-18,151,A recognition system for symbols of electronic components in hand-written circuit diagrams,0.007595
-19,55,GCN-RL Circuit Designer: Transferable Transistor Sizing with Graph Neural Networks and Reinforcement Learning,0.007447
-20,171,Electronic schematic recognition,0.007437
-21,145,Tahuti: A Geometrical Sketch Recognition System for UML Class Diagrams,0.007423
-22,85,Deep Residual Learning for Image Recognition,0.007334
-23,87,Hand Drawn Optical Circuit Recognition,0.007311
-24,162,Sketch based interfaces: Early processing for sketch understanding,0.007291
-25,117,ImageNet Classification with Deep Convolutional Neural Networks,0.007188
-26,46,Electric Circuit Diagram Detection. Recognition and Simulation,0.007188
-27,129,ImageNet: A Large-Scale Hierarchical Image Database,0.006974
-28,153,Hierarchical Parsing and Recognition of Hand-Sketched Diagrams,0.006965
-29,69,Handwritten Electronic Components Recognition: An Approach Based On HOG + SVM,0.006952
-30,160,Statistical visual language models for ink parsing,0.006878
-31,82,EAST: An Efficient and Accurate Scene Text Detector,0.006867
-32,1,Electronic components recognition based on deep learning. Master's Thesis. Univesity Kasdi Merbbah Ouargla,0.006793
-33,75,KNN Based Hand Drawn Electrical Circuit Recognition,0.006783
-34,65,New trends on digitisation of complex engineering drawings,0.006777
-35,37,Recent Trends on Object Detection and Image Classification: A Review,0.006743
-36,22,Deep learning-based method to recognize line objects and flow arrows from image-format piping and instrumentation diagrams for digitization,0.006565
-37,81,Handwritten Recognition Using SVM. KNN and Neural Network,0.006550
-38,100,Microsoft COCO: Common Objects in Context,0.006493
-39,99,Visualizing and Understanding Convolutional Networks,0.006460
-40,86,Hand-drawn Digital Logic Circuit Component Recognition using SVM,0.006441
-41,79,Flow2Code: From Hand-drawn Flowcharts to Code Execution,0.006414
-42,166,ECIR-An electronic circuit diagram image recognizer,0.006400
-43,159,Shape Matching and Object Recognition Using Shape Contexts,0.006393
-44,177,A threshold selection method from gray-level histograms,0.006385
-45,26,Recognition of symbols and topology in the image of a DC circuit diagram based on contours and skeletons,0.006377
-46,38,Deep Learning and Image Processing for Handwritten Style Recognition. Master's Thesis. Uppsala Universitet,0.006375
-47,142,An Overview of the Tesseract OCR Engine,0.006315
-48,30,Handwritten Digit Recognition using Machine and Deep Learning Algorithms,0.006313
-49,107,Interest of Syntactic Knowledge for On-Line Flowchart Recognition,0.006269
-50,158,Recognizing multi-stroke symbols,0.006262
-51,150,Histograms of oriented gradients for human detection,0.006248
-52,54,Classification of Hand-Drawn Basic Circuit Components Using Convolutional Neural Networks,0.006229
-53,70,Symbol Detection in Online Handwritten Graphics Using Faster R-CNN,0.006117
-54,103,Handwritten Circuit Schematic Detection and Simulation using Computer Vision Approach,0.006104
-55,163,Online Recognition of Sketched Electrical Diagrams,0.006089
-56,66,Overview of Image Matching Based on ORB Algorithm,0.006077
-57,3,A Symbol Recognition System for Single-Line Diagrams Developed Using a Deep-Learning Approach,0.006021
-58,148,Recognizing and Simulating Sketched Logic Circuits,0.005955
-59,33,GNN-RE: Graph neural networks for reverse engineering of gate-level netlists,0.005950
-60,41,Offline hand-drawn circuit component recognition using texture and shape-based features,0.005916
-61,109,Circuit Sketch Recognition,0.005903
-62,143,Caltech-256 object category dataset,0.005898
-63,96,Detection of Arrows in On-line Sketched Diagrams using Relative Stroke Positioning,0.005882
-64,61,A Digitization and Conversion Tool for Imaged Drawings to Intelligent Piping and Instrumentation Diagrams (P&ID),0.005871
-65,126,Object Detection with Discriminatively Trained Part-Based Models,0.005827
-66,18,Smartphone Handwritten Circuits Solver Using Augmented Reality and Capsule Deep Networks for Engineering Education,0.005826
-67,95,Going deeper with convolutions,0.005795
-68,127,Feature Extraction and Classifier Combination for Image-based Sketch Recognition,0.005757
-69,13,From Image to Simulation: An ANN-based Automatic Circuit Netlist Generator (Img2Sim),0.005739
-70,53,Sketic: A machine learning-based digital circuit recognition platform,0.005720
-71,57,Sketch Fewer to Recognize More by Learning a Co-Regularized Sparse Representation,0.005713
-72,168,Gradient-based learning applied to document recognition,0.005704
-73,23,Segmentation and Recognition of Offline Sketch Scenes Using Dynamic Programming,0.005669
-74,147,HMM-Based Efficient Sketch Recognition,0.005656
-75,134,A Visual Approach to Sketched Symbol Recognition,0.005654
-76,42,Understanding Graphs in EDA: From Shallow to Deep Learning,0.005557
-77,6,Hand Drawn Graph Recognition,0.005509
-78,73,Pre-Processing and Feature Extraction Technique for Hand-drawn Finite Automata Recognition,0.005498
-79,122,Improving neural networks by preventing co-adaptation of feature detectors,0.005489
-80,176,A Fast Parallel Algorithm for Thinning Digital Patterns,0.005442
-81,52,Deep learning for symbols detection and classification in engineering drawings,0.005403
-82,118,On-line Handwritten Flowchart Recognition. Beautification. and Editing System,0.005400
-83,78,Heuristics-based detection to improve text/graphics segmentation in complex engineering drawings,0.005396
-84,16,Handwritten Logic Circuits Analysis Using the YOLO Network and a New Boundary Tracking Algorithm,0.005377
-85,80,Sketch-a-Net: A Deep Neural Network that Beats humans,0.005370
-86,8,Optical character recognition on engineering drawings to achieve automation in production quality control,0.005368
-87,93,Fully convolutional networks for semantic segmentation,0.005324
-88,161,CALI: An Online Scribble Recognizer for Calligraphic Interfaces,0.005312
-89,71,Real-time interpretation of hand-drawn sketches with extended hierarchical bi-dimensional grammar,0.005286
-90,156,Sketched symbol recognition using Zernike moments,0.005280
-91,84,You Only Look Once: Unified. Real-Time Object Detection,0.005271
-92,114,DeCAF: A deep convolutional activation feature for generic visual recognition,0.005248
-93,106,Network In Network,0.005234
-94,45,ANN Based Digital Circuit Simulator,0.005226
-95,15,Generation of Netlist from a Hand drawn Circuit through Image Processing and Machine Learning,0.005221
-96,63,SKETRACK: Stroke-Based Recognition of Online Hand-Drawn Sketches of Arrow-Connected Diagrams and Digital Logic Circuit Diagrams,0.005214
-97,102,Sketched symbol recognition using Latent-Dynamic Conditional Random Fields and distance-based clustering,0.005213
-98,67,Development of a Two-Stage Segmentation-Based Word Searching Method for Handwritten Document Images,0.005204
-99,140,Sketch interpretation using multiscale models of temporal patterns,0.005199
-100,128,The PASCAL visual object classes (VOC) challenge,0.005196
-101,77,Mask R-CNN,0.005161
-102,17,Towards automatic generation of piping and instrumentation diagrams (P&IDs) with artificial intelligence,0.005127
-103,164,Sketching interfaces: toward more human interface design,0.005114
-104,28,Object Detection and Text Recognition in Large-scale Technical Drawings,0.005101
-105,40,Online separation of handwriting from freehand drawing using extreme learning machines,0.005097
-106,94,ImageNet Large Scale Visual Recognition Challenge,0.005056
-107,173,Backpropagation applied to handwritten zip code recognition,0.005055
-108,155,An image-based trainable symbol recognizer for sketch-based interfaces,0.005038
-109,111,Circuit Recognition Using Netlist,0.005017
-110,24,Hand-Drawn Electrical Circuit Recognition using Object Detection and Node Recognition,0.004987
-111,25,Freehand to Digital Circuit Reconstruction Using HOG and SVM,0.004973
-112,5,Using YOLO Network for Automatic Processing of Finite Automata Images with Application to Bit-Strings Recognition,0.004971
-113,90,Online recognition of sketched arrow-connected diagrams,0.004945
-114,62,Research on K nearest neighbor identification of hand-drawn circuit diagram,0.004904
-115,101,Recognition System for On-line Sketched Diagrams,0.004898
-116,131,Graphic Symbol Recognition using Auto Associative Neural Network Model,0.004885
-117,44,Synthesizing of Hand-drawn Electrical Circuits Using Machine Learning Techniques,0.004867
-118,113,Overfeat: Integrated recognition. localization and detection using convolutional networks,0.004844
-119,105,Spatial pyramid pooling in deep convolutional networks for visual recognition,0.004841
-120,108,Fusion of statistical and structural information for flowchart recognition,0.004826
-121,20,A two-stage CNN-based hand-drawn electrical and electronic circuit component recognition system,0.004802
-122,7,Instance Segmentation Based Graph Extraction for Handwritten Circuit Diagram Images,0.004802
-123,21,Arrow R-CNN for handwritten diagram recognition,0.004793
-124,49,Circuit component detection in offline hand-drawn electrical/electronic circuit diagram,0.004777
-125,35,Machine learning based structure recognition in analog schematics for constraints generation,0.004761
-126,175,Moment-Preserving Thresholding: A New Approach,0.004751
-127,60,Improved Algorithm for Circuit Diagram Image Recognition,0.004749
-128,91,Fast R-CNN,0.004743
-129,36,Survey on hand drawn symbol classification and recognition,0.004686
-130,110,Modeling Flowchart Structure Recognition as a Max-Sum Problem,0.004678
-131,58,A comparative study of graphic symbol recognition methods,0.004677
-132,29,A public ground-truth dataset for handwritten circuit diagram images,0.004647
-133,157,Online Handwritten Circuit Recognition on a Tablet PC,0.004588
-134,74,E-Learning System for Electronic Circuit Construction Using Handwriting Recognition and Mixed Reality Techniques,0.004580
-135,19,Detection of circuit components on hand-drawn circuit images by using Faster R-CNN method,0.004579
-136,169,Computer interpretation of process and instrumentation drawings,0.004574
-137,89,SSD: Single shot multibox detector,0.004540
-138,138,Sketch recognition in interspersed drawings using time-based graphical models,0.004530
-139,56,Multi-Domain Recognition of Hand-Drawn Diagrams Using Hierarchical Parsing,0.004449
-140,11,A Comprehensive Survey on Electronic Design Automation and Graph Neural Networks: Theory and Applications,0.004431
-141,12,CKTGNN: Circuit Graph Neural Network for Electronic Design Automation,0.004364
-142,119,Sketched symbol recognition with auto-completion,0.004341
-143,4,Hand-Drawn Electronic Component Recognition Using ORB,0.004327
-144,59,Object detection in design diagrams with machine learning,0.004313
-145,10,Digitization of chemical process flow diagrams using deep convolutional neural networks,0.004292
-146,144,Interactive Recognition of Hand-drawn Circuit Diagrams. Master's thesis. University of Stellenbosch,0.004291
-147,48,Automatic Digitization of Engineering Diagrams using Deep Learning and Graph Search,0.004226
-148,170,Optical Recognition of Electrical Circuit Drawings,0.004186
-149,121,How do humans sketch objects?,0.004181
-150,88,The Detection of Electrical and Electronics Components using K nearest Neighbor (KNN) classification Algorithm,0.004166
-151,31,Object Detection for P&ID Images using various Deep Learning Techniques,0.004163
-152,76,Handling Hand-Drawn Diagrams. Master's thesis. University of Edinburgh,0.004123
-153,141,A Multi-Agent System for Hand-drawn Diagram Recognition,0.004104
-154,167,Analysis of Engineering Drawings: State of the Art and Challenges,0.004098
-155,137,An Online Hand-Drawn Electric Circuit Diagram Recognition System Using Hidden Markov Models,0.004082
-156,104,Hand Written Circuit Schematic Recognition,0.004065
-157,97,On-line Handwritten Flowchart Recognition Based on Logical Structure and Graph Grammar,0.004006
-158,115,Selective search for object recognition,0.003959
-159,123,Classified Segmentation of Online Complex Freehand Sketching,0.003940
-160,51,Deep Learning for Text Detection and Recognition in Complex Engineering Diagrams,0.003938
-161,136,Hand-drawn Electric Circuit Diagram Understanding Using 2D Dynamic programming,0.003882
-162,9,Img2Sim-V2: A CAD Tool for User-Independent Simulation of Circuits in Image Format,0.003855
-163,130,Combining Representations for Improved Sketch Recognition. Ph.D. Thesis. MIT,0.003840
-164,139,Applying Domain Knowledge to the Recognition of Handwritten ZIP Codes. Master's Thesis. Indiana University South Bend,0.003799
-165,34,Layout symmetry annotation for analog circuits with graph neural networks,0.003793
-166,120,Query-Adaptive Shape Topic Mining for Hand-Drawn Sketch Recognition,0.003782
-167,0,Recognizing Hand-drawn Diagrams in Images. Ph.D. Thesis. Universit�t Mannheim,0.003763
-168,124,Recognition of on-line Hand-drawn Graphical Symbols Based on BP Neural Network,0.003746
-169,2,ElectroNet: An Enhanced Model for Small-Scale Object Detection in Electrical Schematic Diagrams,0.003729
-170,27,A System for Conversion of Hand-drawn Electrical circuit to Digital circuit: A Deep learning approach,0.003590
-171,50,Graph-Based Locality-Sensitive Circuit Sketch Recognizer,0.003588
-172,116,Understanding Freehand Diagrams: Combining Appearance and Context for Multi-Domain Sketch Recognition. Ph.D. Thesis. MIT,0.003539
-173,47,Classification of Hand-Drawn Circuit Components by Considering the Analysis of Current Methods,0.003425
-174,112,Sketch recognition of digital logical circuits. Ph.D. Thesis. M.Sc. Thesis,0.003361
-175,32,Deep Self-Supervised Representation Learning for Free-Hand Sketch,0.003268
-176,133,VizDraw: A Platform to Convert Online Hand-Drawn Graphics into Computer Graphics,0.003260
-177,14,Image Processing for Recognition of Digital Elements in HDL Code Generation,0.003161
-178,135,Hand Drawn Symbol Recognition by Blurred Shape Model Descriptor and a Multiclass Classifier,0.002766
+1,165,Machine recognition of hand-drawn circuit diagrams,0.000762
+2,132,On-line hand-drawn electric circuit diagram recognition using 2D dynamic programming,0.000701
+3,125,First Experiments on a new Online Handwritten Flowchart Database,0.000557
+4,162,Sketch based interfaces: Early processing for sketch understanding,0.000535
+5,151,A recognition system for symbols of electronic components in hand-written circuit diagrams,0.000532
+6,172,Specifying gestures by example,0.000528
+7,87,Hand Drawn Optical Circuit Recognition,0.000527
+8,147,HMM-Based Efficient Sketch Recognition,0.000517
+9,83,Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks,0.000505
+10,72,Segmentation and Recognition of Electronic Components in Hand-Drawn Circuit Diagrams,0.000504
+11,160,Statistical visual language models for ink parsing,0.000504
+12,171,Electronic schematic recognition,0.000502
+13,117,ImageNet Classification with Deep Convolutional Neural Networks,0.000501
+14,146,Combining geometry and domain knowledge to interpret hand-drawn diagrams,0.000499
+15,158,Recognizing multi-stroke symbols,0.000498
+16,107,Interest of Syntactic Knowledge for On-Line Flowchart Recognition,0.000495
+17,163,Online Recognition of Sketched Electrical Diagrams,0.000494
+18,98,Rich feature hierarchies for accurate object detection and semantic segmentation,0.000485
+19,152,SketchREAD: A Multi-Domain Sketch Recognition Engine,0.000483
+20,153,Hierarchical Parsing and Recognition of Hand-Sketched Diagrams,0.000458
+21,103,Handwritten Circuit Schematic Detection and Simulation using Computer Vision Approach,0.000455
+22,92,Very Deep Convolutional Networks for Large-Scale Image Recognition,0.000454
+23,86,Hand-drawn Digital Logic Circuit Component Recognition using SVM,0.000454
+24,161,CALI: An Online Scribble Recognizer for Calligraphic Interfaces,0.000450
+25,75,KNN Based Hand Drawn Electrical Circuit Recognition,0.000450
+26,109,Circuit Sketch Recognition,0.000449
+27,174,An Automatic Circuit Diagram Reader with Loop-Structured-Based Symbol Recognition,0.000446
+28,154,Distinctive image features from scale-invariant keypoints,0.000445
+29,149,LADDER. a sketching language for user interface developers,0.000440
+30,64,Handwritten electric circuit diagram recognition: An approach based on finite state machine,0.000435
+31,150,Histograms of oriented gradients for human detection,0.000431
+32,145,Tahuti: A Geometrical Sketch Recognition System for UML Class Diagrams,0.000427
+33,175,Moment-Preserving Thresholding: A New Approach,0.000427
+34,85,Deep Residual Learning for Image Recognition,0.000426
+35,155,An image-based trainable symbol recognizer for sketch-based interfaces,0.000419
+36,176,A Fast Parallel Algorithm for Thinning Digital Patterns,0.000419
+37,134,A Visual Approach to Sketched Symbol Recognition,0.000416
+38,91,Fast R-CNN,0.000415
+39,168,Gradient-based learning applied to document recognition,0.000414
+40,129,ImageNet: A Large-Scale Hierarchical Image Database,0.000414
+41,177,A threshold selection method from gray-level histograms,0.000413
+42,173,Backpropagation applied to handwritten zip code recognition,0.000412
+43,159,Shape Matching and Object Recognition Using Shape Contexts,0.000408
+44,113,Overfeat: Integrated recognition. localization and detection using convolutional networks,0.000406
+45,122,Improving neural networks by preventing co-adaptation of feature detectors,0.000400
+46,140,Sketch interpretation using multiscale models of temporal patterns,0.000400
+47,115,Selective search for object recognition,0.000398
+48,108,Fusion of statistical and structural information for flowchart recognition,0.000397
+49,166,ECIR-An electronic circuit diagram image recognizer,0.000397
+50,68,Automatic Information Extraction from Piping and Instrumentation Diagrams,0.000397
+51,84,You Only Look Once: Unified. Real-Time Object Detection,0.000393
+52,128,The PASCAL visual object classes (VOC) challenge,0.000393
+53,156,Sketched symbol recognition using Zernike moments,0.000391
+54,93,Fully convolutional networks for semantic segmentation,0.000388
+55,110,Modeling Flowchart Structure Recognition as a Max-Sum Problem,0.000383
+56,118,On-line Handwritten Flowchart Recognition. Beautification. and Editing System,0.000381
+57,148,Recognizing and Simulating Sketched Logic Circuits,0.000381
+58,126,Object Detection with Discriminatively Trained Part-Based Models,0.000379
+59,105,Spatial pyramid pooling in deep convolutional networks for visual recognition,0.000378
+60,111,Circuit Recognition Using Netlist,0.000378
+61,89,SSD: Single shot multibox detector,0.000377
+62,136,Hand-drawn Electric Circuit Diagram Understanding Using 2D Dynamic programming,0.000377
+63,100,Microsoft COCO: Common Objects in Context,0.000374
+64,101,Recognition System for On-line Sketched Diagrams,0.000371
+65,164,Sketching interfaces: toward more human interface design,0.000370
+66,65,New trends on digitisation of complex engineering drawings,0.000369
+67,95,Going deeper with convolutions,0.000368
+68,138,Sketch recognition in interspersed drawings using time-based graphical models,0.000368
+69,142,An Overview of the Tesseract OCR Engine,0.000367
+70,143,Caltech-256 object category dataset,0.000367
+71,157,Online Handwritten Circuit Recognition on a Tablet PC,0.000366
+72,99,Visualizing and Understanding Convolutional Networks,0.000366
+73,144,Interactive Recognition of Hand-drawn Circuit Diagrams. Master's thesis. University of Stellenbosch,0.000364
+74,54,Classification of Hand-Drawn Basic Circuit Components Using Convolutional Neural Networks,0.000364
+75,114,DeCAF: A deep convolutional activation feature for generic visual recognition,0.000363
+76,94,ImageNet Large Scale Visual Recognition Challenge,0.000361
+77,106,Network In Network,0.000360
+78,61,A Digitization and Conversion Tool for Imaged Drawings to Intelligent Piping and Instrumentation Diagrams (P&ID),0.000352
+79,69,Handwritten Electronic Components Recognition: An Approach Based On HOG + SVM,0.000352
+80,63,SKETRACK: Stroke-Based Recognition of Online Hand-Drawn Sketches of Arrow-Connected Diagrams and Digital Logic Circuit Diagrams,0.000352
+81,70,Symbol Detection in Online Handwritten Graphics Using Faster R-CNN,0.000347
+82,82,EAST: An Efficient and Accurate Scene Text Detector,0.000346
+83,169,Computer interpretation of process and instrumentation drawings,0.000342
+84,49,Circuit component detection in offline hand-drawn electrical/electronic circuit diagram,0.000340
+85,137,An Online Hand-Drawn Electric Circuit Diagram Recognition System Using Hidden Markov Models,0.000340
+86,62,Research on K nearest neighbor identification of hand-drawn circuit diagram,0.000337
+87,48,Automatic Digitization of Engineering Diagrams using Deep Learning and Graph Search,0.000337
+88,77,Mask R-CNN,0.000336
+89,131,Graphic Symbol Recognition using Auto Associative Neural Network Model,0.000335
+90,167,Analysis of Engineering Drawings: State of the Art and Challenges,0.000331
+91,53,Sketic: A machine learning-based digital circuit recognition platform,0.000331
+92,79,Flow2Code: From Hand-drawn Flowcharts to Code Execution,0.000330
+93,104,Hand Written Circuit Schematic Recognition,0.000330
+94,88,The Detection of Electrical and Electronics Components using K nearest Neighbor (KNN) classification Algorithm,0.000327
+95,41,Offline hand-drawn circuit component recognition using texture and shape-based features,0.000325
+96,55,GCN-RL Circuit Designer: Transferable Transistor Sizing with Graph Neural Networks and Reinforcement Learning,0.000325
+97,43,A general framework for the recognition of online handwritten graphics,0.000321
+98,133,VizDraw: A Platform to Convert Online Hand-Drawn Graphics into Computer Graphics,0.000321
+99,90,Online recognition of sketched arrow-connected diagrams,0.000320
+100,20,A two-stage CNN-based hand-drawn electrical and electronic circuit component recognition system,0.000319
+101,39,Deep neural network for automatic image recognition of engineering diagrams,0.000319
+102,80,Sketch-a-Net: A Deep Neural Network that Beats humans,0.000318
+103,112,Sketch recognition of digital logical circuits. Ph.D. Thesis. M.Sc. Thesis,0.000318
+104,78,Heuristics-based detection to improve text/graphics segmentation in complex engineering drawings,0.000318
+105,102,Sketched symbol recognition using Latent-Dynamic Conditional Random Fields and distance-based clustering,0.000317
+106,121,How do humans sketch objects?,0.000317
+107,96,Detection of Arrows in On-line Sketched Diagrams using Relative Stroke Positioning,0.000317
+108,60,Improved Algorithm for Circuit Diagram Image Recognition,0.000314
+109,139,Applying Domain Knowledge to the Recognition of Handwritten ZIP Codes. Master's Thesis. Indiana University South Bend,0.000314
+110,123,Classified Segmentation of Online Complex Freehand Sketching,0.000313
+111,59,Object detection in design diagrams with machine learning,0.000313
+112,24,Hand-Drawn Electrical Circuit Recognition using Object Detection and Node Recognition,0.000313
+113,29,A public ground-truth dataset for handwritten circuit diagram images,0.000313
+114,46,Electric Circuit Diagram Detection. Recognition and Simulation,0.000311
+115,13,From Image to Simulation: An ANN-based Automatic Circuit Netlist Generator (Img2Sim),0.000311
+116,40,Online separation of handwriting from freehand drawing using extreme learning machines,0.000309
+117,22,Deep learning-based method to recognize line objects and flow arrows from image-format piping and instrumentation diagrams for digitization,0.000308
+118,21,Arrow R-CNN for handwritten diagram recognition,0.000308
+119,51,Deep Learning for Text Detection and Recognition in Complex Engineering Diagrams,0.000308
+120,127,Feature Extraction and Classifier Combination for Image-based Sketch Recognition,0.000307
+121,120,Query-Adaptive Shape Topic Mining for Hand-Drawn Sketch Recognition,0.000307
+122,97,On-line Handwritten Flowchart Recognition Based on Logical Structure and Graph Grammar,0.000306
+123,19,Detection of circuit components on hand-drawn circuit images by using Faster R-CNN method,0.000304
+124,30,Handwritten Digit Recognition using Machine and Deep Learning Algorithms,0.000304
+125,36,Survey on hand drawn symbol classification and recognition,0.000304
+126,66,Overview of Image Matching Based on ORB Algorithm,0.000304
+127,71,Real-time interpretation of hand-drawn sketches with extended hierarchical bi-dimensional grammar,0.000304
+128,130,Combining Representations for Improved Sketch Recognition. Ph.D. Thesis. MIT,0.000304
+129,23,Segmentation and Recognition of Offline Sketch Scenes Using Dynamic Programming,0.000302
+130,58,A comparative study of graphic symbol recognition methods,0.000301
+131,170,Optical Recognition of Electrical Circuit Drawings,0.000301
+132,32,Deep Self-Supervised Representation Learning for Free-Hand Sketch,0.000301
+133,50,Graph-Based Locality-Sensitive Circuit Sketch Recognizer,0.000301
+134,57,Sketch Fewer to Recognize More by Learning a Co-Regularized Sparse Representation,0.000301
+135,119,Sketched symbol recognition with auto-completion,0.000301
+136,124,Recognition of on-line Hand-drawn Graphical Symbols Based on BP Neural Network,0.000301
+137,135,Hand Drawn Symbol Recognition by Blurred Shape Model Descriptor and a Multiclass Classifier,0.000301
+138,141,A Multi-Agent System for Hand-drawn Diagram Recognition,0.000301
+139,52,Deep learning for symbols detection and classification in engineering drawings,0.000300
+140,67,Development of a Two-Stage Segmentation-Based Word Searching Method for Handwritten Document Images,0.000298
+141,10,Digitization of chemical process flow diagrams using deep convolutional neural networks,0.000296
+142,28,Object Detection and Text Recognition in Large-scale Technical Drawings,0.000296
+143,31,Object Detection for P&ID Images using various Deep Learning Techniques,0.000296
+144,15,Generation of Netlist from a Hand drawn Circuit through Image Processing and Machine Learning,0.000296
+145,18,Smartphone Handwritten Circuits Solver Using Augmented Reality and Capsule Deep Networks for Engineering Education,0.000296
+146,25,Freehand to Digital Circuit Reconstruction Using HOG and SVM,0.000296
+147,17,Towards automatic generation of piping and instrumentation diagrams (P&IDs) with artificial intelligence,0.000296
+148,33,GNN-RE: Graph neural networks for reverse engineering of gate-level netlists,0.000295
+149,34,Layout symmetry annotation for analog circuits with graph neural networks,0.000295
+150,35,Machine learning based structure recognition in analog schematics for constraints generation,0.000295
+151,42,Understanding Graphs in EDA: From Shallow to Deep Learning,0.000295
+152,0,Recognizing Hand-drawn Diagrams in Images. Ph.D. Thesis. Universit�t Mannheim,0.000292
+153,1,Electronic components recognition based on deep learning. Master's Thesis. Univesity Kasdi Merbbah Ouargla,0.000292
+154,2,ElectroNet: An Enhanced Model for Small-Scale Object Detection in Electrical Schematic Diagrams,0.000292
+155,3,A Symbol Recognition System for Single-Line Diagrams Developed Using a Deep-Learning Approach,0.000292
+156,4,Hand-Drawn Electronic Component Recognition Using ORB,0.000292
+157,5,Using YOLO Network for Automatic Processing of Finite Automata Images with Application to Bit-Strings Recognition,0.000292
+158,6,Hand Drawn Graph Recognition,0.000292
+159,7,Instance Segmentation Based Graph Extraction for Handwritten Circuit Diagram Images,0.000292
+160,8,Optical character recognition on engineering drawings to achieve automation in production quality control,0.000292
+161,9,Img2Sim-V2: A CAD Tool for User-Independent Simulation of Circuits in Image Format,0.000292
+162,11,A Comprehensive Survey on Electronic Design Automation and Graph Neural Networks: Theory and Applications,0.000292
+163,12,CKTGNN: Circuit Graph Neural Network for Electronic Design Automation,0.000292
+164,14,Image Processing for Recognition of Digital Elements in HDL Code Generation,0.000292
+165,16,Handwritten Logic Circuits Analysis Using the YOLO Network and a New Boundary Tracking Algorithm,0.000292
+166,26,Recognition of symbols and topology in the image of a DC circuit diagram based on contours and skeletons,0.000292
+167,27,A System for Conversion of Hand-drawn Electrical circuit to Digital circuit: A Deep learning approach,0.000292
+168,37,Recent Trends on Object Detection and Image Classification: A Review,0.000292
+169,38,Deep Learning and Image Processing for Handwritten Style Recognition. Master's Thesis. Uppsala Universitet,0.000292
+170,44,Synthesizing of Hand-drawn Electrical Circuits Using Machine Learning Techniques,0.000292
+171,45,ANN Based Digital Circuit Simulator,0.000292
+172,47,Classification of Hand-Drawn Circuit Components by Considering the Analysis of Current Methods,0.000292
+173,56,Multi-Domain Recognition of Hand-Drawn Diagrams Using Hierarchical Parsing,0.000292
+174,73,Pre-Processing and Feature Extraction Technique for Hand-drawn Finite Automata Recognition,0.000292
+175,74,E-Learning System for Electronic Circuit Construction Using Handwriting Recognition and Mixed Reality Techniques,0.000292
+176,76,Handling Hand-Drawn Diagrams. Master's thesis. University of Edinburgh,0.000292
+177,81,Handwritten Recognition Using SVM. KNN and Neural Network,0.000292
+178,116,Understanding Freehand Diagrams: Combining Appearance and Context for Multi-Domain Sketch Recognition. Ph.D. Thesis. MIT,0.000292

@@ -5,7 +5,7 @@
 #include <stdlib.h> // Standard library definitions
 
 // Global variables:
-#define MAX_N_NODES 21
+#define MAX_N_NODES 5185
 
 // Structure to represent the adjacency matrix:
 typedef struct {

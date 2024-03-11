@@ -328,6 +328,7 @@ void printTopNodesStudents(TransitionMatrix *probabilitiesVector, NumberName *nu
 // Print top nodes based on probabilities
 void printTopNodesPapers(TransitionMatrix *probabilitiesVector, NumberName *numberName) {
     int n = probabilitiesVector->rows;
+    int counter = 1;
     double *probabilities = malloc(n * sizeof(double));
     int *indices = malloc(n * sizeof(int));
 
@@ -343,12 +344,14 @@ void printTopNodesPapers(TransitionMatrix *probabilitiesVector, NumberName *numb
     // Print top nodes
     printf("Top nodes based on probabilities:\n\n");
     for (int i = 0; i < n; i++) {
-        if(i < 9){
-            printf("#%d. %s (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
-        } else if(i < 99){
-            printf("#%d.  %s (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
-        } else {
-            printf("#%d.   %s (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+        if(numberName->papers[indices[i]]->paperNumber < 178){
+            if(i < 9){
+                printf("#%d. %s (Node #%d): \tProbability %.6f\n", counter++, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+            } else if(i < 99){
+                printf("#%d.  %s (Node #%d): \tProbability %.6f\n", counter++, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+            } else {
+                printf("#%d.   %s (Node #%d): \tProbability %.6f\n", counter++, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+            }
         }
     }
 

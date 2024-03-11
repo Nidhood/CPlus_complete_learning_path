@@ -28,6 +28,8 @@ TransitionMatrix *markovChainMethod(TransitionMatrix *matrix, TransitionMatrix *
     bool converged = false;
     TransitionMatrix *oldProbabilities = probabilitiesVector;
 
+    int counter = 0;
+
     while (!converged) {
 
         // 1. Multiply the matrix by the probabilities vector:
@@ -52,8 +54,11 @@ TransitionMatrix *markovChainMethod(TransitionMatrix *matrix, TransitionMatrix *
 
         // 5. Free the difference matrix:
         freeMatrix(difference);
+
+        counter++;
     }
 
+    printf("Iterations: %d\n", counter);
     return oldProbabilities;
 }
 
@@ -92,6 +97,9 @@ void saveResultsPageRankAlgorithmRankingStudents(TransitionMatrix *probabilities
 
 // Save the results of the PageRank algorithm to a file (with the format of printTopNodesPapers):
 void saveResultsPageRankAlgorithmRankingPapers(TransitionMatrix *probabilitiesVector, NumberName *numberName, const char *filename) {
+    // Counter for the number of papers:
+    int counter = 1;
+
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
         printf("Error opening file %s\n", filename);
@@ -114,7 +122,9 @@ void saveResultsPageRankAlgorithmRankingPapers(TransitionMatrix *probabilitiesVe
     // Print top nodes
     fprintf(file, "Rank,No.,Paper,Probability\n");
     for (int i = 0; i < n; i++) {
-        fprintf(file, "%d,%d,%s,%.6f\n", i+1, numberName->papers[indices[i]]->paperNumber, numberName->papers[indices[i]]->paperName, probabilities[i]);
+        if(numberName->papers[indices[i]]->paperNumber < 178){
+            fprintf(file, "%d,%d,%s,%.6f\n", counter++, numberName->papers[indices[i]]->paperNumber, numberName->papers[indices[i]]->paperName, probabilities[i]);
+        }
     }
 
     // Free allocated memory
