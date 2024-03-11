@@ -637,7 +637,7 @@ Modeling the intra-class variability for liver lesion detection using a multi-cl
 Segmentation and recognition of symbols for handwritten piping and instrument diagram,458
 Component detection in piping and instrumentation diagrams of nuclear power plants based on neural networks,459
 Symbol recognition in electrical diagrams using probabilistic graph matching,460
-github.com. "NetworkX",461
+github.com. NetworkX,461
 Batch normalization: Accelerating deep network training by reducing internal covariate shift,462
 An automatic recognition system for piping and instrument diagrams,463
 End-to-end digitization of image format piping and instrumentation diagrams at an industrially applicable level,464
