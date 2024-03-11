@@ -1,3 +1,3 @@
-/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/CMakeFiles/Proyecto.dir
-/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/nidhood/Desktop/University/2024/Sexto semestre/Teoría de la computación/Programming practices/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/nidhood/Desktop/carpeta sin título/New/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/CMakeFiles/Proyecto.dir
+/Users/nidhood/Desktop/carpeta sin título/New/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nidhood/Desktop/carpeta sin título/New/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir

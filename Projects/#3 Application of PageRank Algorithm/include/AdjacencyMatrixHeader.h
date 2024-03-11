@@ -3,22 +3,22 @@
 
 #include <stdio.h> // Standard input/output definitions
 #include <stdlib.h> // Standard library definitions
-#include "GraphHeader.h" // Graph structure
 
-// Definition of the matrix structure:
+// Global variables:
+#define MAX_N_NODES 21
+
+// Structure to represent the adjacency matrix:
 typedef struct {
-    double **data;     // Pointer to the matrix data
+    double **data;  // Pointer to the matrix data
     int rows;       // Number of rows
     int columns;    // Number of columns
 } AdjacencyMatrix;
 
 // Function prototypes:
-AdjacencyMatrix *createMatrix(int rows, int columns);
-void freeMatrix(AdjacencyMatrix *matrix);
-void freeVector(AdjacencyMatrix *vector);
-double getElement(AdjacencyMatrix *matrix, int row, int column);
-void setElement(AdjacencyMatrix *matrix, int row, int column, double value);
-AdjacencyMatrix* graphToAdjacencyMatrix(Graph *g);
-void printMatrix(AdjacencyMatrix *matrix);
+AdjacencyMatrix *createAdjacencyMatrix(const char *filename);
+void freeAdjacencyMatrix(AdjacencyMatrix *matrix);
+double getElementAdjacencyMatrix(AdjacencyMatrix *matrix, int row, int column);
+void setElementAdjacencyMatrix(AdjacencyMatrix *matrix, int row, int column, double value);
+void printAdjacencyMatrix(AdjacencyMatrix *matrix);
 
 #endif

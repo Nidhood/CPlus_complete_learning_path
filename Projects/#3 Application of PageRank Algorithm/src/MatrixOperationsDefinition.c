@@ -1,7 +1,7 @@
 #include "../include/MatrixOperationsHeader.h"
 
 // Function to perform addition of two adjacency matrices:
-AdjacencyMatrix *addMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
+TransitionMatrix *addMatrices(TransitionMatrix *matrix1, TransitionMatrix *matrix2) {
 
     // Check if matrices have the same dimensions:
     if (matrix1->rows != matrix2->rows || matrix1->columns != matrix2->columns) {
@@ -10,7 +10,7 @@ AdjacencyMatrix *addMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2)
     }
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
+    TransitionMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
     if (result == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -27,10 +27,10 @@ AdjacencyMatrix *addMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2)
 }
 
 // Function to calculate the sum of all rows and generate a column matrix with the total sum
-AdjacencyMatrix* sumRows(AdjacencyMatrix *matrix) {
+TransitionMatrix* sumRows(TransitionMatrix *matrix) {
 
     // Create a new matrix with 1 column and the same number of rows as the input matrix
-    AdjacencyMatrix *sumMatrix = createMatrix(matrix->rows, 1);
+    TransitionMatrix *sumMatrix = createMatrix(matrix->rows, 1);
     if (sumMatrix == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -50,10 +50,10 @@ AdjacencyMatrix* sumRows(AdjacencyMatrix *matrix) {
 }
 
 // Function to perform scalar addition on an adjacency matrix:
-AdjacencyMatrix *scalarAddition(AdjacencyMatrix *matrix, double scalar) {
+TransitionMatrix *scalarAddition(TransitionMatrix *matrix, double scalar) {
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
+    TransitionMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
 
     // Perform scalar addition
     for (int i = 0; i < matrix->rows; i++) {
@@ -66,7 +66,7 @@ AdjacencyMatrix *scalarAddition(AdjacencyMatrix *matrix, double scalar) {
 }
 
 // Function to perform subtraction of two adjacency matrices
-AdjacencyMatrix *subtractMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
+TransitionMatrix *subtractMatrices(TransitionMatrix *matrix1, TransitionMatrix *matrix2) {
     // Check if matrices have the same dimensions
     if (matrix1->rows != matrix2->rows || matrix1->columns != matrix2->columns) {
         printf("Matrices must have the same dimensions for subtraction\n");
@@ -74,7 +74,7 @@ AdjacencyMatrix *subtractMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *mat
     }
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
+    TransitionMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
     if (result == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -91,10 +91,10 @@ AdjacencyMatrix *subtractMatrices(AdjacencyMatrix *matrix1, AdjacencyMatrix *mat
 }
 
 // Function to perform scalar subtraction on an adjacency matrix
-AdjacencyMatrix *scalarSubtraction(AdjacencyMatrix *matrix, double scalar) {
+TransitionMatrix *scalarSubtraction(TransitionMatrix *matrix, double scalar) {
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
+    TransitionMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
 
     // Perform scalar subtraction
     for (int i = 0; i < matrix->rows; i++) {
@@ -107,7 +107,7 @@ AdjacencyMatrix *scalarSubtraction(AdjacencyMatrix *matrix, double scalar) {
 }
 
 // Function to perform least squares subtraction of two matrices
-AdjacencyMatrix *leastSquaresSubtraction(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
+TransitionMatrix *leastSquaresSubtraction(TransitionMatrix *matrix1, TransitionMatrix *matrix2) {
 
     // Check if matrices have the same dimensions
     if (matrix1->rows != matrix2->rows || matrix1->columns != matrix2->columns) {
@@ -118,7 +118,7 @@ AdjacencyMatrix *leastSquaresSubtraction(AdjacencyMatrix *matrix1, AdjacencyMatr
     // Create a new matrix to store the result
     int rows = matrix1->rows;
     int columns = matrix1->columns;
-    AdjacencyMatrix *result = createMatrix(rows, columns);
+    TransitionMatrix *result = createMatrix(rows, columns);
     if (result == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -137,9 +137,9 @@ AdjacencyMatrix *leastSquaresSubtraction(AdjacencyMatrix *matrix1, AdjacencyMatr
 
 
 // Function to perform scalar multiplication on an adjacency matrix
-AdjacencyMatrix *scalarMultiplication(AdjacencyMatrix *matrix, double scalar) {
+TransitionMatrix *scalarMultiplication(TransitionMatrix *matrix, double scalar) {
     // Create a new matrix to store the result
-    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
+    TransitionMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
 
     // Perform scalar multiplication
     for (int i = 0; i < matrix->rows; i++) {
@@ -152,7 +152,7 @@ AdjacencyMatrix *scalarMultiplication(AdjacencyMatrix *matrix, double scalar) {
 }
 
 // Function to perform scalar division on an adjacency matrix
-AdjacencyMatrix *scalarDivision(AdjacencyMatrix *matrix, double scalar) {
+TransitionMatrix *scalarDivision(TransitionMatrix *matrix, double scalar) {
     // Check if scalar is zero
     if (scalar == 0) {
         printf("Division by zero is not allowed\n");
@@ -160,7 +160,7 @@ AdjacencyMatrix *scalarDivision(AdjacencyMatrix *matrix, double scalar) {
     }
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
+    TransitionMatrix *resultMatrix = createMatrix(matrix->rows, matrix->columns);
 
     // Perform scalar division
     for (int i = 0; i < matrix->rows; i++) {
@@ -173,7 +173,7 @@ AdjacencyMatrix *scalarDivision(AdjacencyMatrix *matrix, double scalar) {
 }
 
 // Function to perform element-wise multiplication (Hadamard product) of two adjacency matrices
-AdjacencyMatrix *elementWiseProduct(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
+TransitionMatrix *elementWiseProduct(TransitionMatrix *matrix1, TransitionMatrix *matrix2) {
     // Check if matrices have the same dimensions
     if (matrix1->rows != matrix2->rows || matrix1->columns != matrix2->columns) {
         printf("Matrices must have the same dimensions for element-wise multiplication\n");
@@ -181,7 +181,7 @@ AdjacencyMatrix *elementWiseProduct(AdjacencyMatrix *matrix1, AdjacencyMatrix *m
     }
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
+    TransitionMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
     if (result == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -198,7 +198,7 @@ AdjacencyMatrix *elementWiseProduct(AdjacencyMatrix *matrix1, AdjacencyMatrix *m
 }
 
 // Function to perform element-wise division (Hadamard division) of two adjacency matrices
-AdjacencyMatrix *elementWiseDivision(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
+TransitionMatrix *elementWiseDivision(TransitionMatrix *matrix1, TransitionMatrix *matrix2) {
     // Check if matrices have the same dimensions
     if (matrix1->rows != matrix2->rows || matrix1->columns != matrix2->columns) {
         printf("Matrices must have the same dimensions for element-wise division\n");
@@ -206,7 +206,7 @@ AdjacencyMatrix *elementWiseDivision(AdjacencyMatrix *matrix1, AdjacencyMatrix *
     }
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
+    TransitionMatrix *result = createMatrix(matrix1->rows, matrix1->columns);
     if (result == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -229,7 +229,7 @@ AdjacencyMatrix *elementWiseDivision(AdjacencyMatrix *matrix1, AdjacencyMatrix *
 }
 
 // Function to perform matrix multiplication:
-AdjacencyMatrix *matrixMultiplication(AdjacencyMatrix *matrix1, AdjacencyMatrix *matrix2) {
+TransitionMatrix *matrixMultiplication(TransitionMatrix *matrix1, TransitionMatrix *matrix2) {
 
     // Check if matrices have compatible dimensions for multiplication1
     if (matrix1->columns != matrix2->rows) {
@@ -238,7 +238,7 @@ AdjacencyMatrix *matrixMultiplication(AdjacencyMatrix *matrix1, AdjacencyMatrix 
     }
 
     // Create a new matrix to store the result
-    AdjacencyMatrix *result = createMatrix(matrix1->rows, matrix2->columns);
+    TransitionMatrix *result = createMatrix(matrix1->rows, matrix2->columns);
     if (result == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -258,10 +258,10 @@ AdjacencyMatrix *matrixMultiplication(AdjacencyMatrix *matrix1, AdjacencyMatrix 
 }
 
 // Function to transpose a matrix:
-AdjacencyMatrix *transposeMatrix(AdjacencyMatrix *matrix) {
+TransitionMatrix *transposeMatrix(TransitionMatrix *matrix) {
 
     // Create a new matrix to store the transposed matrix:
-    AdjacencyMatrix *transposed = createMatrix(matrix->columns, matrix->rows);
+    TransitionMatrix *transposed = createMatrix(matrix->columns, matrix->rows);
     if (transposed == NULL) {
         printf("Memory allocation failed\n");
         return NULL;
@@ -295,8 +295,8 @@ void bubbleSort(double arr[], int indices[], int n) {
     }
 }
 
-// Print top nodes based on probabilities
-void printTopNodes(AdjacencyMatrix *probabilitiesVector, NumberName *numberName) {
+// Print top nodes based on probabilities of the students:
+void printTopNodesStudents(TransitionMatrix *probabilitiesVector, NumberName *numberName) {
     int n = probabilitiesVector->rows;
     double *probabilities = malloc(n * sizeof(double));
     int *indices = malloc(n * sizeof(int));
@@ -314,13 +314,72 @@ void printTopNodes(AdjacencyMatrix *probabilitiesVector, NumberName *numberName)
     printf("Top nodes based on probabilities:\n\n");
     for (int i = 0; i < n; i++) {
         if(i < 9){
-            printf("#%d.  '%s' (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+            printf("#%d.  Node #%d: \tProbability %.6f\n", i+1, indices[i], probabilities[i]);
         } else {
-            printf("#%d. '%s' (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+            printf("#%d. Node #%d: \tProbability %.6f\n", i+1, indices[i], probabilities[i]);
         }
     }
 
     // Free allocated memory
     free(probabilities);
     free(indices);
+}
+
+// Print top nodes based on probabilities
+void printTopNodesPapers(TransitionMatrix *probabilitiesVector, NumberName *numberName) {
+    int n = probabilitiesVector->rows;
+    double *probabilities = malloc(n * sizeof(double));
+    int *indices = malloc(n * sizeof(int));
+
+    // Copy probabilities and indices
+    for (int i = 0; i < n; i++) {
+        probabilities[i] = probabilitiesVector->data[i][0];
+        indices[i] = i;
+    }
+
+    // Sort probabilities and corresponding indices
+    bubbleSort(probabilities, indices, n);
+
+    // Print top nodes
+    printf("Top nodes based on probabilities:\n\n");
+    for (int i = 0; i < n; i++) {
+        if(i < 9){
+            printf("#%d. %s (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+        } else if(i < 99){
+            printf("#%d.  %s (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+        } else {
+            printf("#%d.   %s (Node #%d): \tProbability %.6f\n", i+1, numberName->papers[indices[i]]->paperName, numberName->papers[indices[i]]->paperNumber, probabilities[i]);
+        }
+    }
+
+    // Free allocated memory
+    free(probabilities);
+    free(indices);
+}
+
+// Proof the file if it is a graph or a matrix (using regex to check the word "graph" or "matrix" in the txt):
+bool isGraphFile(const char *filename) {
+    if (filename == NULL)
+        return false;
+
+    // Compile regular expression
+    regex_t regex;
+    int ret = regcomp(&regex, "graph", REG_EXTENDED | REG_ICASE);
+    if (ret != 0) {
+        printf("Error compiling regex\n");
+        return false;
+    }
+
+    // Execute regular expression
+    ret = regexec(&regex, filename, 0, NULL, 0);
+    regfree(&regex);
+
+    if (ret == 0) {
+        return true; // Match found
+    } else if (ret == REG_NOMATCH) {
+        return false; // No match found
+    } else {
+        printf("Error executing regex\n");
+        return false;
+    }
 }
