@@ -50,12 +50,12 @@ Replace `<executable name>`, `<alpha>`, `<epsilon>`, and `<graph_file>` with the
 
 #### Examples of Graph Files:
 
-- `data/group_1(graph).txt`
-- `data/group_1(matrix).txt`
-- `data/group_2(graph).txt`
-- `data/group_2(matrix).txt`
-- `data/group_3(graph).txt`
-- `data/group_3(matrix).txt`
+- `data/group_1_graph.txt`
+- `data/group_1_matrix.txt`
+- `data/group_2_graph.txt`
+- `data/group_2_matrix.txt`
+- `data/group_3_graph.txt`
+- `data/group_3_matrix.txt`
 - `data/reference_graph.txt`
 
 These files symbolize different networks that you can analyze 🕵️‍♂️, adjusting the parameters `<alpha>` and `<epsilon>` according to your specific needs.

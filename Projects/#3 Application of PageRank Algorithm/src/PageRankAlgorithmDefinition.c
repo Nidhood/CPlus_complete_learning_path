@@ -79,9 +79,9 @@ void saveResultsPageRankAlgorithmRankingStudents(TransitionMatrix *probabilities
     bubbleSort(probabilities, indices, n);
 
     // Print top nodes
-    fprintf(file, "Rank;Student;Probability\n");
+    fprintf(file, "Rank,Student,Probability\n");
     for (int i = 0; i < n; i++) {
-        fprintf(file, "%d;%d;%.6f\n", i+1, indices[i], probabilities[i]);
+        fprintf(file, "%d,%d,%.6f\n", i+1, indices[i], probabilities[i]);
     }
 
     // Free allocated memory
@@ -112,9 +112,9 @@ void saveResultsPageRankAlgorithmRankingPapers(TransitionMatrix *probabilitiesVe
     bubbleSort(probabilities, indices, n);
 
     // Print top nodes
-    fprintf(file, "Rank;Paper;Probability\n");
+    fprintf(file, "Rank,Paper,Probability\n");
     for (int i = 0; i < n; i++) {
-        fprintf(file, "%d;%s;%.6f\n", i+1, numberName->papers[indices[i]]->paperName, probabilities[i]);
+        fprintf(file, "%d,%s,%.6f\n", i+1, numberName->papers[indices[i]]->paperName, probabilities[i]);
     }
 
     // Free allocated memory
