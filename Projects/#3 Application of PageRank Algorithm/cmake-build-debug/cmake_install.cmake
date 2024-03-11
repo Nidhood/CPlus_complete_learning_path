@@ -1,4 +1,4 @@
-# Install script for directory: /Users/nidhood/Desktop/carpeta sin título/New/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm
+# Install script for directory: /Users/nidhood/Desktop/carpeta sin título/Wenas/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/nidhood/Desktop/carpeta sin título/New/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/nidhood/Desktop/carpeta sin título/Wenas/C_complete_learning_path/Projects/#3 Application of PageRank Algorithm/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
