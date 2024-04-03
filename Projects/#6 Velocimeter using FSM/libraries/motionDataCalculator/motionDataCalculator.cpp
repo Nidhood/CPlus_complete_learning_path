@@ -40,7 +40,7 @@ void initializeMotionData(MotionData* motionData){
 }
 
 // Máquina de estados finitos (FSM) para el cálculo de los datos de movimiento circular uniforme (MCU):
-void calculateMotionDataFSM(SensorHallEffect* sensor, FSMVariables* fsmVariables, MotionData* motionData){
+void calculateMotionDataFSM(SensorHallEffect* sensor, FSMVariables* fsmVariables, MotionData* motionData, float RADIUS){
 
     // Obtenemos el tiempo actual (para empezar el intervalo de pulsos):
     fsmVariables->currentTime2 = millis();
@@ -60,10 +60,9 @@ void calculateMotionDataFSM(SensorHallEffect* sensor, FSMVariables* fsmVariables
         // Actualizar el estado de la FSM:
         switch (fsmVariables->motionState) {
 
-            // Estado para esperar pulsaciones:
+            // Estado para esperar el primer pulso:
             case WAITING_FOR_PULSES:
                 if (sensorState == HIGH) {
-
                     // Reiniciar pulsaciones:
                     fsmVariables->pulse = 0;
 
@@ -74,68 +73,159 @@ void calculateMotionDataFSM(SensorHallEffect* sensor, FSMVariables* fsmVariables
                     previousSensorState = sensorState;
 
                     // Pasamos al siguiente estado:
-                    fsmVariables->motionState = COUNTING_PULSES;
+                    fsmVariables->motionState = COUNTING_FIRST_PULSE;
                 }
                 break;
 
-            // Estado para contar los pulsos:
-            case COUNTING_PULSES:
-
+                // Estado para contar el primer pulso:
+            case COUNTING_FIRST_PULSE:
                 // Verificar si se ha producido un pulso y el estado anterior era LOW
                 if (sensorState == LOW && previousSensorState == HIGH) {
-
                     // Incrementar el contador de pulsos
                     fsmVariables->pulse++;
 
-                    // Sí se ha alcanzado el número de pulsos especificado, cambiar al estado CALCULATING_VELOCITY
-                    if (fsmVariables->pulse >= NUM_PULSES) {
-
+                    // Sí se ha alcanzado el número de pulsos especificado, cambiar al estado COUNTING_SECOND_PULSE
+                    if (fsmVariables->pulse >= 1) {
                         // Obtenemos el tiempo actual:
                         fsmVariables->currentTime = millis();
 
-                        // Cumplida la condición, pasamos al siguiente estado:
+                        // Calculamos el delta de tiempo:
+                        fsmVariables->elapsedTime = fsmVariables->currentTime - fsmVariables->previousTime;
+
+                        // Calculamos el delta de tiempo acumulado:
+                        fsmVariables->accumulatedElapsedTime += fsmVariables->elapsedTime;
+
+                        // Guardamos el tiempo actual como el tiempo previo para el próximo pulso
+                        fsmVariables->previousTime = fsmVariables->currentTime;
+
+                        // Guardar el estado anterior del sensor:
+                        previousSensorState = sensorState;
+
+                        // Pasamos al siguiente estado:
+                        fsmVariables->motionState = COUNTING_SECOND_PULSE;
+                    }
+                }
+                break;
+
+                // Estado para contar el segundo pulso:
+            case COUNTING_SECOND_PULSE:
+                // Verificar si se ha producido un pulso y el estado anterior era LOW
+                if (sensorState == LOW && previousSensorState == HIGH) {
+                    // Incrementar el contador de pulsos
+                    fsmVariables->pulse++;
+
+                    // Sí se ha alcanzado el número de pulsos especificado, cambiar al estado COUNTING_THIRD_PULSE
+                    if (fsmVariables->pulse >= 2) {
+                        // Obtenemos el tiempo actual:
+                        fsmVariables->currentTime = millis();
+
+                        // Calculamos el delta de tiempo:
+                        fsmVariables->elapsedTime = fsmVariables->currentTime - fsmVariables->previousTime;
+
+                        // Calculamos el delta de tiempo acumulado:
+                        fsmVariables->accumulatedElapsedTime += fsmVariables->elapsedTime;
+
+                        // Guardamos el tiempo actual como el tiempo previo para el próximo pulso
+                        fsmVariables->previousTime = fsmVariables->currentTime;
+
+                        // Guardar el estado anterior del sensor:
+                        previousSensorState = sensorState;
+
+                        // Pasamos al siguiente estado:
+                        fsmVariables->motionState = COUNTING_THIRD_PULSE;
+                    }
+                }
+                break;
+
+                // Estado para contar el tercer pulso:
+            case COUNTING_THIRD_PULSE:
+                // Verificar si se ha producido un pulso y el estado anterior era LOW
+                if (sensorState == LOW && previousSensorState == HIGH) {
+                    // Incrementar el contador de pulsos
+                    fsmVariables->pulse++;
+
+                    // Sí se ha alcanzado el número de pulsos especificado, cambiar al estado CALCULATING_MOTION_DATA
+                    if (fsmVariables->pulse >= 3) {
+                        // Obtenemos el tiempo actual:
+                        fsmVariables->currentTime = millis();
+
+                        // Calculamos el delta de tiempo:
+                        fsmVariables->elapsedTime = fsmVariables->currentTime - fsmVariables->previousTime;
+
+                        // Calculamos el delta de tiempo acumulado:
+                        fsmVariables->accumulatedElapsedTime += fsmVariables->elapsedTime;
+
+                        // Guardamos el tiempo actual como el tiempo previo para el próximo pulso
+                        fsmVariables->previousTime = fsmVariables->currentTime;
+
+                        // Guardar el estado anterior del sensor:
+                        previousSensorState = sensorState;
+
+                        // Pasamos al siguiente estado:
+                        fsmVariables->motionState = COUNTING_FOURTH_PULSE;
+                    }
+                }
+                break;
+
+                // Estado para contar el cuarto pulso:
+            case COUNTING_FOURTH_PULSE:
+                // Verificar si se ha producido un pulso y el estado anterior era LOW
+                if (sensorState == LOW && previousSensorState == HIGH) {
+                    // Incrementar el contador de pulsos
+                    fsmVariables->pulse++;
+
+                    // Sí se ha alcanzado el número de pulsos especificado, cambiar al estado CALCULATING_MOTION_DATA
+                    if (fsmVariables->pulse >= 4) {
+                        // Obtenemos el tiempo actual:
+                        fsmVariables->currentTime = millis();
+
+                        // Calculamos el delta de tiempo:
+                        fsmVariables->elapsedTime = fsmVariables->currentTime - fsmVariables->previousTime;
+
+                        // Calculamos el delta de tiempo acumulado:
+                        fsmVariables->accumulatedElapsedTime += fsmVariables->elapsedTime;
+
+                        // Guardar el estado anterior del sensor:
+                        previousSensorState = sensorState;
+
+                        // Pasamos al siguiente estado:
                         fsmVariables->motionState = CALCULATING_MOTION_DATA;
                     }
                 }
                 break;
 
-            // Estado para calcular los datos de movimiento circular uniforme (MCU):
+                // Estado para calcular los datos de movimiento circular uniforme (MCU):
             case CALCULATING_MOTION_DATA:
-
-                // Calculamos el delta de tiempo:
-                fsmVariables->elapsedTime = fsmVariables->currentTime - fsmVariables->previousTime;
-
                 // Calculamos el delta de tiempo acumulado:
-                fsmVariables->accumulatedElapsedTime += fsmVariables->currentTime - fsmVariables->previousTime;
+                fsmVariables->accumulatedElapsedTime += fsmVariables->elapsedTime;
 
-                // Evitamos la division por 0:
+                // Evitamos la división por 0:
                 if (fsmVariables->elapsedTime > 0) {
-
                     // Hallamos el tiempo transcurrido (segundos):
                     // Serial.print("Delta de tiempo: ");
                     // Serial.println(fsmVariables->elapsedTime * 0.001);
 
-                    // Hallamos W                       (radianes/segundo):
+                    // Hallamos W (radianes/segundo):
                     calculateAngularVelocity(motionData, fsmVariables);
                     // Serial.print("Velocidad angular: ");
                     // Serial.println(motionData->angularVelocity);
 
-                    // Hallamos la velocidad lineal     (m/s):
+                    // Hallamos la velocidad lineal (m/s):
                     calculateLinearVelocity(motionData, RADIUS);
                     // Serial.print("Velocidad lineal: ");
                     // Serial.println(motionData->linearVelocity);
 
-                    // Hallamos la distancia recorrida  (m):
+                    // Hallamos la distancia recorrida (m):
                     calculateDistance(motionData, fsmVariables);
                     // Serial.print("Distancia recorrida: ");
                     // Serial.println(motionData->distance);
 
-                    // Hallamos la velocidad máxima    (m/s):
+                    // Hallamos la velocidad máxima (m/s):
                     calculateMaxVelocity(motionData);
                     // Serial.print("Velocidad máxima: ");
                     // Serial.println(motionData->maxVelocity);
 
-                    // Hallamos la velocidad promedio  (m/s):
+                    // Hallamos la velocidad promedio (m/s):
                     calculateAverageVelocity(motionData, fsmVariables);
                     // Serial.print("Velocidad promedio: ");
                     // Serial.println(motionData->averageVelocity);
@@ -151,11 +241,12 @@ void calculateMotionDataFSM(SensorHallEffect* sensor, FSMVariables* fsmVariables
     }
 }
 
+
 // Función que calcula la velocidad angular     (m/s).
 void calculateAngularVelocity(MotionData* motionData, FSMVariables* fsmVariables){
 
     // Hallamos W (radianes/segundo):
-    motionData->angularVelocity = (2 * PI * (fsmVariables->pulse - 1)) / (fsmVariables->elapsedTime * 0.001);
+    motionData->angularVelocity = (2 * PI * (NUM_PULSES - 1)) / (fsmVariables->elapsedTime * 0.001);
 }
 
 // Función que calcula la velocidad lineal      (m/s).

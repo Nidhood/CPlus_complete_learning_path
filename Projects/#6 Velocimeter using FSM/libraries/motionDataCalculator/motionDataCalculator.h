@@ -11,14 +11,18 @@
 #define QUEUE_SIZE 10                           // Tamaño de la cola para almacenar las últimas velocidades lineales.
 #define INTERVAL 5                              // Intervalo de tiempo para.
 #define NUM_PULSES 2                            // Cantidad de pulsos.
-#define RADIUS 0.40                             // En m.
 
 // ################################################################## Definición de los estados de la máquina de estados finitos (FSM) para el cálculo de los datos de movimiento circular uniforme (MCU) ##################################################################
 
 typedef enum{
-    WAITING_FOR_PULSES,                         // Estado para esperar pulsaciones.
-    COUNTING_PULSES,                            // Estado para contar los pulsos.
-    CALCULATING_MOTION_DATA                     // Estado para calcular los datos de movimiento circular uniforme (MCU).
+    WAITING_FOR_PULSES,                        // Estado para esperar pulsaciones.
+
+    COUNTING_PULSES,                           // Estado para esperar pulsaciones.
+    COUNTING_FIRST_PULSE,                      // Estado para contar el primer pulso.
+    COUNTING_SECOND_PULSE,                     // Estado para contar el segundo pulso.
+    COUNTING_THIRD_PULSE,                       // Estado para contar el tercer pulso.
+    COUNTING_FOURTH_PULSE,                      // Estado para contar el cuarto pulso.
+    CALCULATING_MOTION_DATA                    // Estado para calcular los datos de movimiento circular uniforme (MCU).
 } MotionStates;
 
 // ################################################################ Definición de las estructuras #################################################################
@@ -37,6 +41,8 @@ typedef struct{
     unsigned long currentTime;                  // Tiempo actual (espera al siguiente intervalo de pulsos).
     unsigned long currentTime2;                 // Tiempo actual (espera al siguiente intervalo de tiempo).
     unsigned long elapsedTime;                  // Tiempo transcurrido.
+    unsigned long totalPeriod;                  // Periodo total de los pulsos.
+
 
     // Para calcular la velocidad promedio:
     unsigned long accumulatedElapsedTime;       // Tiempo total transcurrido.
@@ -66,7 +72,7 @@ void initializeFSMVariables(FSMVariables* fsmVariables);
 void initializeMotionData(MotionData* motionData);
 
 // Máquina de estados finitos (FSM) para el cálculo de los datos de movimiento circular uniforme (MCU).
-void calculateMotionDataFSM(SensorHallEffect* sensor, FSMVariables* fsmVariables, MotionData* motionData);
+void calculateMotionDataFSM(SensorHallEffect* sensor, FSMVariables* fsmVariables, MotionData* motionData, float RADIUS);
 
 // Función que calcula la velocidad angular     (m/s).
 void calculateAngularVelocity(MotionData* motionData, FSMVariables* fsmVariables);
