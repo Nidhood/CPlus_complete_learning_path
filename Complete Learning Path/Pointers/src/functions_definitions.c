@@ -36,3 +36,10 @@ void generalPointerInitialization(void *ptr, int type){
         printf("Invalid type\n");
     }
 }
+
+// Function #5: Array route using pointers.
+void arrayRouteUsingPointers( const int *arr, int size ){
+    for(int i = 0; i < size; i++){
+        printf("Value of arr[%d]: %d\n", i, *(arr + i));
+    }
+}

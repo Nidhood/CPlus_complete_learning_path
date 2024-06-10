@@ -1,0 +1,1 @@
+valgrind --leak-check=full ./nombre_de_tu_programa -> para ver los errores de memoria de tu programa en C, al usar malloc, calloc, realloc, free, etc.

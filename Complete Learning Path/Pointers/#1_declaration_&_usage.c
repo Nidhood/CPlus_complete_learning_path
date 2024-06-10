@@ -1,6 +1,6 @@
 #include "functions_definitions.h"
 
-int main(){
+int main(void){
 
     // Always, we are working with normal variables assigned with values:
     int a = 10;

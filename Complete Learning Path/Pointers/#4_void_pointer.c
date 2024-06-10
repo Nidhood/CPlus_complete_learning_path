@@ -1,7 +1,6 @@
-#include <stdio.h>
 #include "functions_definitions.h"
 
-int main(){
+int main(void){
 
     // Like we have seen in the previous snippets, we can use pointers to store the address of any variable.
     // Just creating a pointer with the specified type and assigning the address of the variable to it.
@@ -30,8 +29,8 @@ int main(){
     // But, we need to know the type of the variable to dereference the void pointer.
     // Like in a general function that can accept any type of variable, we can use void pointers.
     // Let's see how it works:
-    // generalPointerInitialization(&a, sizeof(a));
-    // generalPointerInitialization(&b, sizeof(b));
-    // generalPointerInitialization(&c, sizeof(c));
+    generalPointerInitialization(&a, sizeof(a));
+    generalPointerInitialization(&b, sizeof(b));
+    generalPointerInitialization(&c, sizeof(c));
     return 0;
 }

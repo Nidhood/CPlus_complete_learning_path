@@ -2,8 +2,7 @@
 
 # Borramos los archivos anteriores
 rm -rf cmake-build-debug
-rm -f Declaration_Usage
-rm -f Pointer_Aritmetic
+rm -f Dynamic_Memory_Allocation
 
 # Compilamos el proyecto
 mkdir -p cmake-build-debug

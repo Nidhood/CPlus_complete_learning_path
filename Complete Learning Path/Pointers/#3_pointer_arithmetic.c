@@ -1,14 +1,14 @@
-#include <stdio.h>
 #include <stdint.h>
+#include "functions_definitions.h"
 
-int main() {
+int main(void) {
 
     // Now, we need to understand how pointer arithmetic works in C programming.
     // Pointer arithmetic is the process of adding or subtracting an integer value to a pointer.
     // Returning with the array example, let's see how pointer arithmetic works using different data types:
-    uint8_t arrChar[5] = {1, 2, 3, 4, 5};
-    uint16_t arrShort[5] = {1, 2, 3, 4, 5};
-    uint32_t arrLong[5] = {1, 2, 3, 4, 5};
+    uint8_t arrChar[5]      = {1, 2, 3, 4, 5};
+    uint16_t arrShort[5]    = {1, 2, 3, 4, 5};
+    uint32_t arrLong[5]     = {1, 2, 3, 4, 5};
     uint64_t arrLongLong[5] = {1, 2, 3, 4, 5};
 
     // Let's see how pointer arithmetic works with char data type:
@@ -32,7 +32,7 @@ int main() {
     }
     printf("\n");
 
-    // Let's see how pointer arithmetic works with long long data type:
+    // Let's see how pointer arithmetic works with x2 long data type:
     uint64_t *ptrLongLong = arrLongLong;
     for (int i = 0; i < 5; i++) {
         printf("Value of arrLongLong[%d]: %lu - Address of arrLongLong[%d]: %p\n", i, *(ptrLongLong + i), i,
@@ -57,7 +57,13 @@ int main() {
     // Although the pointer is a variable, the sizeof() function returns the size of the pointer, not the size of the data type, which is not very important.
     // The size of the pointer is the same for all data types, which is 8 bytes (64 bits) in a 64-bit system. Or 4 bytes (32 bits) in a 32-bit system.
     printf("Size of ptr: %lu\n", sizeof(ptr));
+    printf("\n");
 
     // In brief, the sizeof() function returns the size of the data type in bytes.
+
+    // A very important concept to understand is the pointer arithmetic with arrays, which make another way and easier to access the elements of an array.
+    // Let's see how it works:
+    int arrInt[5] = {1, 2, 3, 4, 5};
+    arrayRouteUsingPointers(arrInt, 5);
     return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(){
+int main(void){
 
     // Referencing and dereferencing is a very important concept in C programming, especially when working with pointers.
     // Referencing: It is the process of storing the address of a variable in a pointer.

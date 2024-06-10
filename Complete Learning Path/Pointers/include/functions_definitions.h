@@ -15,4 +15,7 @@ void makeChangesInValues(int *a, char *c, float *d, double *e);
 // Function #4: General pointer initialization.
 void generalPointerInitialization(void *ptr, int type);
 
+// Function #5: Array route using pointers.
+void arrayRouteUsingPointers( const int *arr, int size);
+
 #endif
